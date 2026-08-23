@@ -3,413 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Noor Quran Academy - International Quran Institute</title>
+    <title>Al Noor Quran Academy - Online Quran Classes</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #004d40; --accent: #d4af37; --light-bg: #f4f7f6; --dark: #111; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; }
-        body { background: var(--light-bg); color: #333; overflow-x: hidden; }
+        :root { --primary-green: #0a4d3c; --gold-accent: #d4af37; --light-bg: #f8f9fa; --dark-text: #222; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Open Sans', Arial, sans-serif; }
+        body { background: var(--light-bg); color: var(--dark-text); overflow-x: hidden; }
 
         /* Top Bar */
-        .top-bar { background: var(--dark); color: white; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
-        .top-bar a { color: var(--accent); text-decoration: none; margin-left: 15px; }
+        .top-header { background: #000; color: #fff; padding: 8px 5%; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+        .top-header a { color: var(--gold-accent); text-decoration: none; font-weight: bold; }
 
-        /* Header Navigation */
-        header { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .logo { font-size: 22px; font-weight: bold; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        /* Main Navigation Bar */
+        navbar { background: var(--primary-green); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--gold-accent); position: sticky; top: 0; z-index: 1000; }
+        .logo { color: var(--gold-accent); font-size: 24px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold-accent); }
+        .menu-icon { display: none; color: var(--gold-accent); font-size: 26px; cursor: pointer; }
+
+        /* Hero Section */
+        .hero-section { background: linear-gradient(rgba(10, 77, 60, 0.9), rgba(10, 77, 60, 0.9)), url('https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=1200') center/cover; color: white; padding: 110px 20px; text-align: center; border-bottom: 5px solid var(--gold-accent); }
+        .hero-section h1 { font-size: 44px; color: var(--gold-accent); margin-bottom: 20px; font-weight: 800; }
+        .hero-section p { font-size: 20px; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; }
+        .cta-btn { background: var(--gold-accent); color: #000; padding: 14px 32px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; border: none; cursor: pointer; transition: 0.3s; }
+        .cta-btn:hover { background: #b89528; }
+
+        /* General Layout */
+        .section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-heading { text-align: center; font-size: 34px; color: var(--primary-green); margin-bottom: 40px; position: relative; font-weight: 700; }
+        .section-heading::after { content: ''; display: block; width: 100px; height: 4px; background: var(--gold-accent); margin: 10px auto 0; }
+
+        /* Grid Cards */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; text-align: center; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 25px; }
+        .card-body h3 { color: var(--primary-green); font-size: 22px; margin-bottom: 12px; }
+        .card-body p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+
+        /* Fee Pricing Section */
+        .pricing-card { background: #fff; border: 2px solid #ddd; border-radius: 10px; padding: 35px 20px; text-align: center; position: relative; }
+        .pricing-card.featured { border-color: var(--gold-accent); transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .pricing-card .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold-accent); color: #000; padding: 4px 16px; font-weight: bold; font-size: 12px; border-radius: 20px; }
+        .price { font-size: 38px; color: var(--gold-accent); font-weight: bold; margin: 15px 0; }
+        .pricing-card ul { list-style: none; margin-bottom: 25px; text-align: left; }
+        .pricing-card ul li { margin-bottom: 12px; font-size: 15px; color: #444; }
+        .pricing-card ul li i { color: green; margin-right: 10px; }
+
+        /* Registration Form */
+        .form-container { background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; }
         
-        .menu-btn { font-size: 24px; color: var(--accent); cursor: pointer; background: none; border: none; }
-        
-        /* Mobile Side Navigation Menu */
-        .sidenav { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; right: 0; background-color: var(--primary); overflow-x: hidden; transition: 0.3s; padding-top: 60px; border-left: 2px solid var(--accent); }
-        .sidenav a, .sidenav button { padding: 12px 25px; text-decoration: none; font-size: 18px; color: white; display: block; transition: 0.3s; background: none; border: none; width: 100%; text-align: left; cursor: pointer; }
-        .sidenav a:hover, .sidenav button:hover { color: var(--accent); background: rgba(255,255,255,0.05); }
-        .sidenav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; color: var(--accent); }
-
-        /* Hero Banner Section */
-        .hero { background: linear-gradient(rgba(0, 77, 64, 0.88), rgba(0, 77, 64, 0.88)), url('https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=1200') center/cover; color: white; text-align: center; padding: 100px 20px; border-bottom: 5px solid var(--accent); }
-        .hero h1 { font-size: 42px; color: var(--accent); margin-bottom: 15px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 19px; max-width: 750px; margin: 0 auto 30px; line-height: 1.6; }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
-        /* General Container & Typography */
-        .container { max-width: 1150px; margin: 50px auto; padding: 0 20px; }
-        .page { display: none; }
-        .active { display: block; }
-        
-        .section-title { text-align: center; color: var(--primary); font-size: 32px; margin-bottom: 35px; position: relative; font-weight: 700; }
-        .section-title::after { content: ''; display: block; width: 90px; height: 3px; background: var(--accent); margin: 10px auto 0; }
-
-        /* Courses Grid */
-        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 25px; }
-        .course-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #e0e0e0; transition: 0.3s; text-align: center; }
-        .course-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-        .course-card img { width: 100%; height: 190px; object-fit: cover; }
-        .course-card-content { padding: 22px; }
-        .course-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
-        .course-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 18px; }
-
-        /* Pricing Grid */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px; }
-        .price-card { background: white; border-radius: 12px; padding: 30px 20px; text-align: center; border: 2px solid #e0e0e0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; }
-        .price-card.popular { border-color: var(--accent); transform: scale(1.03); }
-        .price-card .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: black; padding: 4px 15px; border-radius: 20px; font-weight: bold; font-size: 12px; }
-        .price-card h3 { color: var(--primary); font-size: 22px; margin-bottom: 15px; }
-        .price-card .amount { font-size: 32px; color: var(--accent); font-weight: bold; margin-bottom: 15px; }
-        .price-card ul { list-style: none; margin-bottom: 25px; text-align: left; padding: 0 15px; }
-        .price-card ul li { margin-bottom: 10px; font-size: 14px; color: #555; }
-        .price-card ul li i { color: green; margin-right: 8px; }
-
-        /* Buttons & Forms */
-        .btn-main { background: var(--accent); color: black; font-weight: bold; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-size: 16px; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .btn-main:hover { background: #b89528; }
-        .btn-google { background: #4285f4; color: white; border: none; width: 100%; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 15px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; gap: 10px; }
-
-        .form-box { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
-        .form-group { margin-bottom: 18px; text-align: left; }
-        label { font-weight: 600; display: block; margin-bottom: 6px; color: #444; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
-        .phone-group { display: flex; gap: 10px; }
-        .phone-group select { width: 40%; }
-
         /* Floating WhatsApp Button */
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
+        .whatsapp-btn { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
 
-        /* Footer */
-        footer { background: var(--dark); color: white; padding: 40px 5% 20px; margin-top: 60px; border-top: 3px solid var(--accent); text-align: center; }
-        footer p { margin-bottom: 10px; font-size: 14px; color: #aaa; }
-        
-        /* Admin Table */
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        th, td { border: 1px solid #eee; padding: 14px; text-align: left; }
-        th { background: var(--primary); color: white; }
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; width: 100%; background: var(--primary-green); position: absolute; top: 60px; left: 0; padding: 20px; }
+            .nav-links.active { display: flex; }
+            .menu-icon { display: block; }
+        }
+
+        footer { background: #000; color: #fff; text-align: center; padding: 30px 20px; border-top: 3px solid var(--gold-accent); margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
+<div class="top-header">
     <div><i class="fas fa-envelope"></i> syedshaha289@gmail.com | <i class="fas fa-phone"></i> +92 330 9133382</div>
-    <div><a href="https://wa.me/923309133382" target="_blank"><i class="fab fa-whatsapp"></i> Live Chat</a></div>
+    <div><a href="https://wa.me/923309133382" target="_blank"><i class="fab fa-whatsapp"></i> Chat On WhatsApp</a></div>
 </div>
 
-<header>
+<navbar>
     <div class="logo"><i class="fas fa-quran"></i> Al Noor Quran Academy</div>
-    <button class="menu-btn" onclick="openNav()"><i class="fas fa-bars"></i></button>
-</header>
+    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#pricing">Fee Plans</a></li>
+        <li><a href="#register">Book Free Trial</a></li>
+    </ul>
+</navbar>
 
-<!-- Side Navigation Drawer -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <button onclick="navTo('home')"><i class="fas fa-home"></i> Home</button>
-    <button onclick="navTo('about')"><i class="fas fa-info-circle"></i> About Us</button>
-    <button onclick="navTo('courses')"><i class="fas fa-book"></i> Courses</button>
-    <button onclick="navTo('pricing')"><i class="fas fa-tag"></i> Fee Plans</button>
-    <button onclick="navTo('register')"><i class="fas fa-user-plus"></i> Book Free Trial</button>
-    <button onclick="navTo('login')"><i class="fas fa-sign-in-alt"></i> Login / Sign Up</button>
-    <button onclick="navTo('admin-login')" style="margin-top: 30px; opacity: 0.6;"><i class="fas fa-user-shield"></i> Portal Access</button>
+<a href="https://wa.me/923309133382" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Hero Section -->
+<div id="home" class="hero-section">
+    <h1>Learn Holy Quran Online With Certified Tutors</h1>
+    <p>1-on-1 Live Interactive Quran Classes for Kids, Adults, Beginners & Advanced Learners Worldwide.</p>
+    <a href="#register" class="cta-btn">BOOK 3 DAYS FREE TRIAL</a>
 </div>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923309133382?text=Assalam-o-Alaikum%20Al%20Noor%20Quran%20Academy,%20I%20want%20information%20about%20online%20classes." class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- HOME PAGE -->
-<div id="home" class="page active">
-    <div class="hero">
-        <h1>Learn Quran Online with Certified Tutors</h1>
-        <p>Interactive 1-on-1 Online Quran Classes for Kids, Adults, Beginners, and Advanced Learners Worldwide.</p>
-        <div class="hero-btns">
-            <button class="btn-main" onclick="navTo('register')">BOOK FREE TRIAL</button>
-            <button class="btn-main" style="background:white; color:black;" onclick="navTo('courses')">BROWSE COURSES</button>
-        </div>
-    </div>
-    
-    <div class="container">
-        <h2 class="section-title">Our Comprehensive Quran Courses</h2>
-        <div class="courses-grid">
-            <!-- Course 1 -->
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=500" alt="Noorani Qaida">
-                <div class="course-card-content">
-                    <h3>Basic Qaida for Beginners</h3>
-                    <p>Learn Arabic letters, pronunciation, and reading fundamentals step-by-step.</p>
-                    <button class="btn-main" style="width:100%;" onclick="navTo('register')">Enroll Now</button>
-                </div>
-            </div>
-            
-            <!-- Course 2 -->
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=500" alt="Nazra Quran">
-                <div class="course-card-content">
-                    <h3>Quran Reading with Tajweed</h3>
-                    <p>Read the Holy Quran fluently with correct pronunciation and rules.</p>
-                    <button class="btn-main" style="width:100%;" onclick="navTo('register')">Enroll Now</button>
-                </div>
-            </div>
-
-            <!-- Course 3 -->
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=500" alt="Hifz Quran">
-                <div class="course-card-content">
-                    <h3>Quran Memorization (Hifz)</h3>
-                    <p>Memorize the Quran with structured revision plans under expert Huffaz tutors.</p>
-                    <button class="btn-main" style="width:100%;" onclick="navTo('register')">Enroll Now</button>
-                </div>
-            </div>
-
-            <!-- Course 4 -->
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=500" alt="Islamic Studies">
-                <div class="course-card-content">
-                    <h3>Islamic Studies & Duain</h3>
-                    <p>Learn daily Masnoon Duain, Kalmas, Namaz, and Islamic morals.</p>
-                    <button class="btn-main" style="width:100%;" onclick="navTo('register')">Enroll Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ABOUT PAGE -->
-<div id="about" class="page container">
-    <h2 class="section-title">About Our Institute</h2>
-    <div style="background:white; padding:35px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); line-height:1.8;">
-        <h3 style="color:var(--primary); margin-bottom:15px;">Welcome to Al Noor Quran Academy</h3>
-        <p>At Al Noor Quran Academy, we are committed to providing high-quality online Quran education to students across the United Kingdom, United States, Canada, Australia, UAE, and Pakistan. Our goal is to make authentic Islamic learning accessible to children, adults, beginners, and advanced learners through personalized one-on-one live interactive online classes.</p>
+<!-- About Section -->
+<div id="about" class="section">
+    <h2 class="section-heading">About Our Institute</h2>
+    <div style="background:#fff; padding:30px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.05); line-height:1.8;">
+        <p><b>Al Noor Quran Academy</b> is a leading international online Quran learning institute dedicated to teaching the Holy Quran with Tajweed, Hifz, and Islamic studies to students of all ages across North America, Europe, the Middle East, and worldwide.</p>
         <br>
-        <p>Using secure platforms like Zoom, Google Meet, and Skype, our qualified male and female tutors deliver interactive lessons tailored to your schedule.</p>
+        <p>We offer personalized 1-on-1 live interactive sessions conducted by qualified Male and Female Quran Tutors through Zoom and Skype.</p>
     </div>
 </div>
 
-<!-- COURSES PAGE -->
-<div id="courses" class="page container">
-    <h2 class="section-title">All Academic Programs</h2>
-    <div class="courses-grid">
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=500" alt="Qaida">
-            <div class="course-card-content">
+<!-- Courses Section -->
+<div id="courses" class="section">
+    <h2 class="section-heading">Our Featured Programs</h2>
+    <div class="grid-3">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=500" alt="Norani Qaida">
+            <div class="card-body">
                 <h3>Norani Qaida Course</h3>
-                <p>Designed for absolute beginners to learn basic Arabic phonetics.</p>
-                <button class="btn-main" style="width:100%;" onclick="navTo('register')">Join Free Trial</button>
+                <p>Learn basic Arabic alphabet recognition, pronunciation rules, and foundational phonetics.</p>
+                <a href="#register" class="cta-btn" style="width:100%;">Enroll Now</a>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=500" alt="Tajweed">
-            <div class="course-card-content">
-                <h3>Tajweed Ul Quran</h3>
-                <p>Master precise rules of Makharij, Ghunna, and Ikhfa.</p>
-                <button class="btn-main" style="width:100%;" onclick="navTo('register')">Join Free Trial</button>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=500" alt="Nazra Quran">
+            <div class="card-body">
+                <h3>Quran Reading with Tajweed</h3>
+                <p>Recite the Holy Quran fluently using precise rules of Tajweed and correct Makharij.</p>
+                <a href="#register" class="cta-btn" style="width:100%;">Enroll Now</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=500" alt="Hifz Quran">
+            <div class="card-body">
+                <h3>Quran Memorization (Hifz)</h3>
+                <p>Memorize the Holy Quran step-by-step with structured daily revision under expert Huffaz.</p>
+                <a href="#register" class="cta-btn" style="width:100%;">Enroll Now</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- PRICING PAGE -->
-<div id="pricing" class="page container">
-    <h2 class="section-title">Affordable Fee Plans</h2>
-    <div class="pricing-grid">
-        <div class="price-card">
+<!-- Pricing Section -->
+<div id="pricing" class="section">
+    <h2 class="section-heading">Monthly Fee Plans</h2>
+    <div class="grid-3">
+        <div class="pricing-card">
             <h3>3 Classes / Week</h3>
-            <div class="amount">$35 <span style="font-size:14px; color:#666;">/ Month</span></div>
+            <div class="price">$35 <span style="font-size:14px; color:#666;">/ Month</span></div>
             <ul>
                 <li><i class="fas fa-check"></i> 1-on-1 Live Classes</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Session</li>
-                <li><i class="fas fa-check"></i> Qualified Tutors</li>
-                <li><i class="fas fa-check"></i> Flexible Timings</li>
+                <li><i class="fas fa-check"></i> 30 Min Per Session</li>
+                <li><i class="fas fa-check"></i> Male / Female Tutors</li>
             </ul>
-            <button class="btn-main" style="width:100%;" onclick="navTo('register')">Select Plan</button>
+            <a href="#register" class="cta-btn" style="width:100%;">Select Plan</a>
         </div>
 
-        <div class="price-card popular">
+        <div class="pricing-card featured">
             <div class="badge">MOST POPULAR</div>
             <h3>4 Classes / Week</h3>
-            <div class="amount">$45 <span style="font-size:14px; color:#666;">/ Month</span></div>
+            <div class="price">$45 <span style="font-size:14px; color:#666;">/ Month</span></div>
             <ul>
                 <li><i class="fas fa-check"></i> 1-on-1 Live Classes</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Session</li>
-                <li><i class="fas fa-check"></i> Male & Female Tutors</li>
-                <li><i class="fas fa-check"></i> Progress Reports</li>
+                <li><i class="fas fa-check"></i> 30 Min Per Session</li>
+                <li><i class="fas fa-check"></i> Monthly Progress Reports</li>
             </ul>
-            <button class="btn-main" style="width:100%;" onclick="navTo('register')">Select Plan</button>
+            <a href="#register" class="cta-btn" style="width:100%;">Select Plan</a>
         </div>
 
-        <div class="price-card">
+        <div class="pricing-card">
             <h3>Weekend Plan</h3>
-            <div class="amount">$30 <span style="font-size:14px; color:#666;">/ Month</span></div>
+            <div class="price">$30 <span style="font-size:14px; color:#666;">/ Month</span></div>
             <ul>
-                <li><i class="fas fa-check"></i> Sat & Sun Classes</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Session</li>
+                <li><i class="fas fa-check"></i> Saturday & Sunday</li>
+                <li><i class="fas fa-check"></i> 30 Min Per Session</li>
                 <li><i class="fas fa-check"></i> Flexible Timings</li>
             </ul>
-            <button class="btn-main" style="width:100%;" onclick="navTo('register')">Select Plan</button>
+            <a href="#register" class="cta-btn" style="width:100%;">Select Plan</a>
         </div>
     </div>
 </div>
 
-<!-- USER LOGIN / SIGN UP PAGE -->
-<div id="login" class="page container">
-    <div class="form-box">
-        <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;">Student Login / Sign Up</h2>
-        
-        <button class="btn-google" onclick="googleSignIn()">
-            <i class="fab fa-google"></i> Continue with Google
-        </button>
-        
-        <div style="text-align:center; margin: 15px 0; color:#888;">OR</div>
-
-        <form onsubmit="event.preventDefault(); alert('Login Successful!'); navTo('home');">
+<!-- Register Section -->
+<div id="register" class="section">
+    <h2 class="section-heading">Book A 3-Day Free Trial</h2>
+    <div class="form-container">
+        <form onsubmit="handleRegistration(event)">
             <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="student@gmail.com" required>
+                <label>Student Name</label>
+                <input type="text" id="sName" placeholder="Enter Full Name" required>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" placeholder="••••••••" required>
-            </div>
-            <button type="submit" class="btn-main" style="width:100%;">Sign In</button>
-        </form>
-    </div>
-</div>
-
-<!-- STUDENT REGISTRATION / BOOK FREE TRIAL -->
-<div id="register" class="page container">
-    <div class="form-box">
-        <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;">Book Free Trial Class</h2>
-        <form id="regForm" onsubmit="handleRegistration(event)">
-            <div class="form-group">
-                <label>Student Full Name</label>
-                <input type="text" id="sName" placeholder="Enter student name" required>
-            </div>
-            <div class="form-group">
-                <label>Select Desired Course</label>
+                <label>Select Program</label>
                 <select id="sCourse">
-                    <option>Basic Qaida for Beginners</option>
+                    <option>Norani Qaida Course</option>
                     <option>Quran Reading with Tajweed</option>
                     <option>Quran Memorization (Hifz)</option>
                     <option>Islamic Studies & Duain</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>WhatsApp Contact Number</label>
-                <div class="phone-group">
-                    <select id="cCode">
-                        <option value="+92">🇵🇰 +92 (PK)</option>
-                        <option value="+1">🇺🇸 +1 (US)</option>
-                        <option value="+44">🇬🇧 +44 (UK)</option>
-                        <option value="+971">🇦🇪 +971 (UAE)</option>
-                        <option value="+966">🇸🇦 +966 (KSA)</option>
-                        <option value="+61">🇦🇺 +61 (AUS)</option>
-                        <option value="+1">🇨🇦 +1 (CA)</option>
-                    </select>
-                    <input type="tel" id="sPhone" placeholder="3309133382" required>
-                </div>
+                <label>WhatsApp Number</label>
+                <input type="tel" id="sPhone" placeholder="+92 330 9133382" required>
             </div>
-            <button type="submit" class="btn-main" style="width:100%;">Submit & Connect WhatsApp</button>
+            <button type="submit" class="cta-btn" style="width:100%;">SUBMIT & START TRIAL</button>
         </form>
     </div>
-</div>
-
-<!-- PROTECTED ADMIN LOGIN -->
-<div id="admin-login" class="page container">
-    <div class="form-box">
-        <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;"><i class="fas fa-lock"></i> Admin Portal Login</h2>
-        <form onsubmit="adminLogin(event)">
-            <div class="form-group">
-                <label>Admin Password</label>
-                <input type="password" id="adminPass" placeholder="Enter secret password" required>
-            </div>
-            <button type="submit" class="btn-main" style="width:100%;">Access Dashboard</button>
-        </form>
-    </div>
-</div>
-
-<!-- PROTECTED ADMIN DASHBOARD -->
-<div id="admin-dashboard" class="page container">
-    <h2 style="color: var(--primary);">Admin Dashboard - Trial Submissions</h2>
-    <p style="margin-bottom: 15px;">Real-time student submissions list:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Student Name</th>
-                <th>Selected Course</th>
-                <th>Phone Number</th>
-                <th>WhatsApp Action</th>
-            </tr>
-        </thead>
-        <tbody id="studentList">
-            <!-- Submissions will load dynamically -->
-        </tbody>
-    </table>
 </div>
 
 <footer>
-    <p><b>Al Noor Quran Academy - International Quran Institute</b></p>
-    <p>Contact Email: syedshaha289@gmail.com | Phone: +92 330 9133382</p>
-    <p>&copy; 2026 Al Noor Quran Academy. All Rights Reserved.</p>
+    <p><b>Al Noor Quran Academy</b> - Official International Quran Portal</p>
+    <p>Email: syedshaha289@gmail.com | Phone: +92 330 9133382</p>
 </footer>
 
 <script>
-    let students = JSON.parse(localStorage.getItem('academy_students')) || [];
-
-    function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
-    function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
-
-    function navTo(pageId) {
-        closeNav();
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0, 0);
-    }
-
-    function googleSignIn() {
-        alert("Google Sign-In Connected! Welcome to Al Noor Quran Academy.");
-        navTo('home');
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
     }
 
     function handleRegistration(e) {
         e.preventDefault();
         let name = document.getElementById('sName').value;
         let course = document.getElementById('sCourse').value;
-        let phone = document.getElementById('cCode').value + document.getElementById('sPhone').value;
-
-        let student = { name, course, phone };
-        students.push(student);
-        localStorage.setItem('academy_students', JSON.stringify(students));
+        let phone = document.getElementById('sPhone').value;
 
         let waMsg = `Assalam-o-Alaikum,%20New%20Free%20Trial%20Booking:%0AName:%20${name}%0ACourse:%20${course}%0APhone:%20${phone}`;
         window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
-        
-        alert("Registration Successful!");
-        document.getElementById('regForm').reset();
-    }
-
-    function adminLogin(e) {
-        e.preventDefault();
-        let pass = document.getElementById('adminPass').value;
-        if(pass === "admin123") {
-            navTo('admin-dashboard');
-            loadAdminData();
-        } else {
-            alert("Incorrect Admin Password!");
-        }
-    }
-
-    function loadAdminData() {
-        let tbody = document.getElementById('studentList');
-        tbody.innerHTML = '';
-        if(students.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No trial bookings yet.</td></tr>';
-            return;
-        }
-        students.forEach(s => {
-            tbody.innerHTML += `<tr>
-                <td><b>${s.name}</b></td>
-                <td>${s.course}</td>
-                <td>${s.phone}</td>
-                <td><a href="https://wa.me/${s.phone.replace('+','')}" target="_blank" style="color:green; font-weight:bold; text-decoration:none;"><i class="fab fa-whatsapp"></i> Chat Now</a></td>
-            </tr>`;
-        });
+        alert("Thank you! Connecting with us on WhatsApp.");
     }
 </script>
 
