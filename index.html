@@ -21,7 +21,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* Top Announcement Bar */
+        /* Top Bar */
         .top-bar {
             background: linear-gradient(90deg, #05080d, #111a28, #05080d);
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
@@ -66,7 +66,7 @@
         nav ul a { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         nav ul a:hover { color: var(--gold-main); }
 
-        /* Ultra-Professional Hero Section with Background Photo */
+        /* Hero Section */
         .hero {
             position: relative;
             min-height: 85vh;
@@ -136,7 +136,7 @@
         }
         .btn-outline:hover { background: rgba(212, 175, 55, 0.1); }
 
-        /* Content Sections Layout */
+        /* Sections Layout */
         .container { max-width: 1200px; margin: 0 auto; padding: 90px 20px; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 {
@@ -149,6 +149,7 @@
         .gold-divider { width: 70px; height: 2px; background: var(--gold-main); margin: 20px auto 0; }
 
         /* Grid System & Cards */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; align-items: center; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .feature-card {
@@ -164,7 +165,7 @@
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 15px var(--accent-glow);
         }
-        .feature-card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid rgba(252,252,252,0.05); }
+        .feature-card img { width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .feature-card-body { padding: 30px; }
         .feature-card-body h3 { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold-light); margin-bottom: 12px; }
         .feature-card-body p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
@@ -225,7 +226,7 @@
         }
         .form-group input:focus, .form-group select:focus { border-color: var(--gold-main); background: rgba(255,255,255,0.07); }
 
-        /* WhatsApp Floating Button */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -285,11 +286,12 @@
 
 <a href="https://wa.me/923309133382" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+<!-- HOME SECTION -->
 <section id="home" class="hero">
     <div class="hero-content">
         <div class="hero-tagline">International Quran Institute</div>
         <h1>Learn Holy Quran Online With Certified Expert Tutors</h1>
-        <p>1-on-1 Interactive Live Classes for Kids and Adults Worldwide. Master Tajweed, Nazra, and Hifz from the Comfort of Your Home.</p>
+        <p>1-on-1 Interactive Live Classes for Kids, Adults, Beginners & Advanced Students Worldwide.</p>
         <div class="hero-btns">
             <a href="#register" class="btn-gold">BOOK 3-DAY FREE TRIAL</a>
             <a href="#courses" class="btn-outline">EXPLORE COURSES</a>
@@ -297,60 +299,78 @@
     </div>
 </section>
 
+<!-- ABOUT SECTION (Concept: Who We Are & Certified Tutors) -->
 <section id="about" class="container">
     <div class="section-header">
         <h2>About Our Academy</h2>
+        <p>Empowering Muslims globally with authentic Quranic education</p>
         <div class="gold-divider"></div>
     </div>
-    <div style="background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px; padding: 40px; line-height: 1.8; color: var(--text-muted);">
-        <p>Welcome to <b>Al Noor Quran Academy</b>, an elite online Islamic educational institute. We are dedicated to delivering authentic Quranic teachings with precise pronunciation (Tajweed) to students across the USA, UK, Canada, Australia, UAE, and beyond.</p>
-        <br>
-        <p>Our personalized 1-on-1 live interactive sessions are led by certified male and female scholars using state-of-the-art digital tools on Zoom and Skype to ensure a smooth and effective learning experience.</p>
+
+    <div class="grid-2">
+        <div>
+            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=800" alt="Adult Quran Student" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+        <div style="line-height:1.8; color:var(--text-muted);">
+            <h3 style="color:var(--gold-light); font-size:26px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Online Quran Teaching</h3>
+            <p>Welcome to <b>Al Noor Quran Academy</b>, an international online Islamic learning center. We offer personalized 1-on-1 live classes designed specifically for kids, male adults, and female adults.</p>
+            <br>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Certified Male & Female Scholars:</b> Learn under experienced Quran Tutors trained in Tajweed and Hifz.</p>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Flexible Schedules:</b> Choose class timings that suit your daily routine in North America, Europe, or the Middle East.</p>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Interactive Zoom/Skype Sessions:</b> Live screen sharing and audio correction for perfect pronunciation.</p>
+        </div>
     </div>
 </section>
 
+<!-- COURSES SECTION (Concept: Kids, Adults & Advanced Programs) -->
 <section id="courses" class="container">
     <div class="section-header">
-        <h2>Our Featured Programs</h2>
-        <p>Tailored courses designed for all ages and skill levels</p>
+        <h2>Our Specialized Programs</h2>
+        <p>Structured Quranic and Islamic courses for all age groups</p>
         <div class="gold-divider"></div>
     </div>
+
     <div class="grid-3">
+        <!-- Kids Qaida Course -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=600" alt="Norani Qaida">
+            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=600" alt="Child Learning Quran">
             <div class="feature-card-body">
-                <h3>Norani Qaida Course</h3>
-                <p>Foundational course for beginners covering Arabic alphabet recognition and basic phonetic pronunciation.</p>
-                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Now</a>
+                <h3>Noorani Qaida For Kids</h3>
+                <p>Designed for children and beginners to master Arabic alphabet recognition, basic rules, and correct pronunciation step-by-step.</p>
+                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Child</a>
             </div>
         </div>
 
+        <!-- Adult Quran Reading -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=600" alt="Nazra Quran">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Adult Reading Quran">
             <div class="feature-card-body">
-                <h3>Quran Reading with Tajweed</h3>
-                <p>Fluent recitation of the Holy Quran with precise application of Makharij and Tajweed rules.</p>
-                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Now</a>
+                <h3>Quran Recitation For Adults</h3>
+                <p>Tailored specifically for male and female adult learners to improve fluency, apply Tajweed rules, and recite beautifully.</p>
+                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Adult</a>
             </div>
         </div>
 
+        <!-- Quran Memorization (Hifz) -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Hifz Quran">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=600" alt="Quran Memorization">
             <div class="feature-card-body">
                 <h3>Quran Memorization (Hifz)</h3>
-                <p>Structured 1-on-1 memorization program with systematic daily revision guided by expert Huffaz.</p>
-                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Now</a>
+                <p>Comprehensive 1-on-1 Hifz program with daily lesson submission and revision supervised by certified Huffaz tutors.</p>
+                <a href="#register" class="btn-gold" style="display:block; text-align:center;">Start Hifz</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- PRICING SECTION -->
 <section id="pricing" class="container">
     <div class="section-header">
-        <h2>Affordable Fee Structure</h2>
-        <p>Choose a plan that fits your family's schedule</p>
+        <h2>Affordable Monthly Plans</h2>
+        <p>Transparent fee structure with no registration fees</p>
         <div class="gold-divider"></div>
     </div>
+
     <div class="grid-3">
         <div class="pricing-card">
             <h3>3 Days / Week</h3>
@@ -358,7 +378,7 @@
             <ul class="pricing-features">
                 <li><i class="fas fa-check"></i> 1-on-1 Live Sessions</li>
                 <li><i class="fas fa-check"></i> 30 Minutes Per Class</li>
-                <li><i class="fas fa-check"></i> Male / Female Tutors</li>
+                <li><i class="fas fa-check"></i> Male & Female Tutors</li>
             </ul>
             <a href="#register" class="btn-outline" style="display:block;">Select Plan</a>
         </div>
@@ -370,7 +390,7 @@
             <ul class="pricing-features">
                 <li><i class="fas fa-check"></i> 1-on-1 Live Sessions</li>
                 <li><i class="fas fa-check"></i> 30 Minutes Per Class</li>
-                <li><i class="fas fa-check"></i> Monthly Evaluation Reports</li>
+                <li><i class="fas fa-check"></i> Progress Tracking Reports</li>
             </ul>
             <a href="#register" class="btn-gold" style="display:block;">Select Plan</a>
         </div>
@@ -388,29 +408,31 @@
     </div>
 </section>
 
+<!-- REGISTER SECTION -->
 <section id="register" class="container">
     <div class="section-header">
-        <h2>Register For A Free Trial</h2>
-        <p>Experience our live 1-on-1 class before committing</p>
+        <h2>Book A 3-Day Free Trial</h2>
+        <p>No credit card required. Experience live class first.</p>
         <div class="gold-divider"></div>
     </div>
+
     <div class="form-wrapper">
         <form onsubmit="handleRegistration(event)">
             <div class="form-group">
-                <label>Student Full Name</label>
-                <input type="text" id="sName" placeholder="Enter student name" required>
+                <label>Student Name</label>
+                <input type="text" id="sName" placeholder="Enter Full Name" required>
             </div>
             <div class="form-group">
-                <label>Select Course</label>
-                <select id="sCourse">
-                    <option>Norani Qaida Course</option>
-                    <option>Quran Reading with Tajweed</option>
-                    <option>Quran Memorization (Hifz)</option>
-                    <option>Islamic Studies & Duain</option>
+                <label>Select Category</label>
+                <select id="sCategory">
+                    <option>Child Student (Kids Qaida / Nazra)</option>
+                    <option>Adult Male Student (Quran / Tajweed)</option>
+                    <option>Adult Female Student (Female Tutor)</option>
+                    <option>Hifz-ul-Quran Student</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>WhatsApp Contact Number</label>
+                <label>WhatsApp Number</label>
                 <input type="tel" id="sPhone" placeholder="+92 330 9133382" required>
             </div>
             <button type="submit" class="btn-gold" style="width:100%; border:none; margin-top:10px;">SUBMIT & CONNECT WHATSAPP</button>
@@ -419,7 +441,7 @@
 </section>
 
 <footer>
-    <p><b>Al Noor Quran Academy</b> — Official International Online Quran Institute</p>
+    <p><b>Al Noor Quran Academy</b> — Official International Online Quran Portal</p>
     <p style="margin-top:8px;">Contact: syedshaha289@gmail.com | Phone: +92 330 9133382</p>
 </footer>
 
@@ -427,10 +449,10 @@
     function handleRegistration(e) {
         e.preventDefault();
         let name = document.getElementById('sName').value;
-        let course = document.getElementById('sCourse').value;
+        let category = document.getElementById('sCategory').value;
         let phone = document.getElementById('sPhone').value;
 
-        let waMsg = `Assalam-o-Alaikum,%20New%20Trial%20Booking:%0AName:%20${name}%0ACourse:%20${course}%0APhone:%20${phone}`;
+        let waMsg = `Assalam-o-Alaikum,%20New%20Free%20Trial%20Booking:%0AName:%20${name}%0ACategory:%20${category}%0APhone:%20${phone}`;
         window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
         alert("Registration Successful! Connecting to WhatsApp.");
     }
