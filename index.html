@@ -1,110 +1,219 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Noor Quran Academy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-        body { background: #f0f2f5; color: #333; }
-        header { background: #1b5e20; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        nav button { background: #2e7d32; color: white; border: none; padding: 8px 15px; margin-left: 5px; border-radius: 4px; cursor: pointer; }
-        nav button:hover { background: #388e3c; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; }
-        .page { display: none; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        :root { --primary: #0a3d62; --accent: #d4af37; --bg: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg); color: #333; }
+        
+        /* Header & Nav */
+        header { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 22px; font-weight: bold; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        nav button { background: transparent; color: white; border: 1px solid var(--accent); padding: 8px 15px; margin-left: 5px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        nav button:hover { background: var(--accent); color: black; }
+        
+        /* Hero Banner */
+        .hero { background: linear-gradient(rgba(10,61,98,0.85), rgba(10,61,98,0.85)), url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1200') center/cover; color: white; text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 36px; color: var(--accent); margin-bottom: 15px; }
+        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto 25px; }
+        
+        /* Cards & Sections */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .page { display: none; }
         .active { display: block; }
-        h2 { color: #1b5e20; margin-bottom: 15px; }
-        input, select { width: 100%; padding: 10px; margin: 8px 0 15px; border: 1px solid #ccc; border-radius: 4px; }
-        .submit-btn { width: 100%; background: #1b5e20; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        .submit-btn:hover { background: #2e7d32; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background: #1b5e20; color: white; }
+        
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px; }
+        .course-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-top: 3px solid var(--accent); text-align: center; padding: 20px; }
+        .course-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* Forms */
+        .form-box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 550px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
+        .phone-group { display: flex; gap: 10px; }
+        .phone-group select { width: 35%; }
+        
+        .btn-main { background: var(--accent); color: black; font-weight: bold; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .btn-main:hover { background: #b89528; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: var(--primary); color: white; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Al Noor Quran Academy</h1>
+    <div class="logo"><i class="fas fa-quran"></i> Al Noor Academy</div>
     <nav>
         <button onclick="showPage('home')">Home</button>
-        <button onclick="showPage('register')">Student Register</button>
-        <button onclick="showPage('login')">Login / Sign Up</button>
-        <button onclick="showPage('admin')">Admin Panel</button>
+        <button onclick="showPage('register')">Register Student</button>
+        <button onclick="showPage('admin-login')"><i class="fas fa-lock"></i> Admin</button>
     </nav>
 </header>
 
-<div class="container">
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <h2>Khushamdeed - Al Noor Quran Academy</h2>
-        <p>Online Tajweed, Hifz, aur Basic Qaida parhne ke liye registration karein.</p>
-        <br>
-        <button class="submit-btn" onclick="showPage('register')">Abhi Student Register Karein</button>
-    </div>
+<a href="https://wa.me/923309133382?text=Assalam-o-Alaikum%20Al%20Noor%20Quran%20Academy,%20I%20want%20information%20about%20courses." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-    <!-- Registration Page -->
-    <div id="register" class="page">
-        <h2>Student Registration Form</h2>
-        <form onsubmit="event.preventDefault(); alert('Registration successful!');">
-            <label>Student Name:</label>
-            <input type="text" placeholder="Apna naam likhein" required>
-            <label>Course Name:</label>
-            <select>
-                <option>Nazra Quran</option>
-                <option>Tajweed Course</option>
-                <option>Hifz Quran</option>
-            </select>
-            <label>WhatsApp Mobile Number:</label>
-            <input type="tel" placeholder="03XXXXXXXXX" required>
-            <button type="submit" class="submit-btn">Submit Registration</button>
-        </form>
+<!-- Home Page -->
+<div id="home" class="page active">
+    <div class="hero">
+        <h1>Learn Holy Quran Online At Home</h1>
+        <p>Certified Male & Female Tutors for Tajweed, Hifz, and Islamic Studies.</p>
+        <button class="btn-main" style="max-width:200px;" onclick="showPage('register')">Enroll Now</button>
     </div>
-
-    <!-- Login/Sign Up Page -->
-    <div id="login" class="page">
-        <h2>User Login / Sign Up</h2>
-        <form onsubmit="event.preventDefault(); alert('Logged in successfully!');">
-            <label>Email Address:</label>
-            <input type="email" placeholder="example@gmail.com" required>
-            <label>Password:</label>
-            <input type="password" placeholder="Password" required>
-            <button type="submit" class="submit-btn">Login</button>
-        </form>
-    </div>
-
-    <!-- Admin Panel Page -->
-    <div id="admin" class="page">
-        <h2>Admin Dashboard</h2>
-        <p>Registered Students List:</p>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Course</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Muhammad Ali</td>
-                <td>Tajweed</td>
-                <td>Active</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ayesha Khan</td>
-                <td>Nazra</td>
-                <td>Pending</td>
-            </tr>
-        </table>
+    
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary);">Our Featured Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=400" alt="Qaida">
+                <h3>Norani Qaida</h3>
+                <p>Basic Arabic rules for beginners & kids.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=400" alt="Tajweed">
+                <h3>Quran with Tajweed</h3>
+                <p>Learn accurate pronunciation and rules.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Hifz">
+                <h3>Hifz-e-Quran</h3>
+                <p>Memorize Quran with specialized techniques.</p>
+            </div>
+        </div>
     </div>
 </div>
 
+<!-- Registration Page -->
+<div id="register" class="page container">
+    <div class="form-box">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;">Student Registration</h2>
+        <form id="regForm" onsubmit="handleRegistration(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="sName" placeholder="Student Name" required>
+            </div>
+            <div class="form-group">
+                <label>Select Course</label>
+                <select id="sCourse">
+                    <option>Norani Qaida</option>
+                    <option>Quran Tajweed</option>
+                    <option>Hifz-e-Quran</option>
+                    <option>Islamic Studies</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>WhatsApp Phone Number</label>
+                <div class="phone-group">
+                    <select id="cCode">
+                        <option value="+92">🇵🇰 +92 (PK)</option>
+                        <option value="+1">🇺🇸 +1 (US)</option>
+                        <option value="+44">🇬🇧 +44 (UK)</option>
+                        <option value="+971">🇦🇪 +971 (UAE)</option>
+                        <option value="+966">🇸🇦 +966 (KSA)</option>
+                        <option value="+61">🇦🇺 +61 (AUS)</option>
+                    </select>
+                    <input type="tel" id="sPhone" placeholder="3309133382" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-main">Submit & Send to WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Login Page -->
+<div id="admin-login" class="page container">
+    <div class="form-box">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 20px;"><i class="fas fa-lock"></i> Admin Access Only</h2>
+        <form onsubmit="adminLogin(event)">
+            <div class="form-group">
+                <label>Admin Password</label>
+                <input type="password" id="adminPass" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn-main">Login to Dashboard</button>
+        </form>
+    </div>
+</div>
+
+<!-- Protected Admin Dashboard Page -->
+<div id="admin-dashboard" class="page container">
+    <h2 style="color: var(--primary);">Admin Dashboard - Registered Students</h2>
+    <p style="margin-bottom: 15px;">Real-time submission list from registration form:</p>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="studentList">
+            <!-- Dynamic Data -->
+        </tbody>
+    </table>
+</div>
+
 <script>
+    let students = JSON.parse(localStorage.getItem('academy_students')) || [];
+
     function showPage(pageId) {
-        let pages = document.querySelectorAll('.page');
-        pages.forEach(page => page.classList.remove('active'));
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
+    }
+
+    function handleRegistration(e) {
+        e.preventDefault();
+        let name = document.getElementById('sName').value;
+        let course = document.getElementById('sCourse').value;
+        let phone = document.getElementById('cCode').value + document.getElementById('sPhone').value;
+
+        let student = { name, course, phone };
+        students.push(student);
+        localStorage.setItem('academy_students', JSON.stringify(students));
+
+        // Redirect to WhatsApp
+        let waMsg = `Assalam-o-Alaikum,%20New%20Student%20Registration:%0AName:%20${name}%0ACourse:%20${course}%0APhone:%20${phone}`;
+        window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
+        
+        alert("Registration Submitted Successfully!");
+        document.getElementById('regForm').reset();
+    }
+
+    function adminLogin(e) {
+        e.preventDefault();
+        let pass = document.getElementById('adminPass').value;
+        if(pass === "admin123") {
+            showPage('admin-dashboard');
+            loadAdminData();
+        } else {
+            alert("Incorrect Admin Password!");
+        }
+    }
+
+    function loadAdminData() {
+        let tbody = document.getElementById('studentList');
+        tbody.innerHTML = '';
+        if(students.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No students registered yet.</td></tr>';
+            return;
+        }
+        students.forEach(s => {
+            tbody.innerHTML += `<tr>
+                <td>${s.name}</td>
+                <td>${s.course}</td>
+                <td>${s.phone}</td>
+                <td><a href="https://wa.me/${s.phone.replace('+','')}" target="_blank" style="color:green;"><i class="fab fa-whatsapp"></i> Chat</a></td>
+            </tr>`;
+        });
     }
 </script>
 
