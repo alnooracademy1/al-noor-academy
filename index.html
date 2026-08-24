@@ -62,16 +62,16 @@
         }
         .brand-logo i { color: var(--gold-main); -webkit-text-fill-color: initial; }
         
-        nav ul { display: flex; gap: 28px; list-style: none; }
-        nav ul a { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul { display: flex; gap: 24px; list-style: none; align-items: center; }
+        nav ul a { color: var(--text-light); text-decoration: none; font-size: 13px; font-weight: 500; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         nav ul a:hover { color: var(--gold-main); }
 
         /* Hero Section */
         .hero {
             position: relative;
             min-height: 85vh;
-            background: linear-gradient(180deg, rgba(8,13,20,0.7) 0%, rgba(8,13,20,0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=1920') center/cover no-repeat fixed;
+            background: linear-gradient(180deg, rgba(8,13,20,0.75) 0%, rgba(8,13,20,0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1920') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -89,16 +89,16 @@
         }
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 700;
             line-height: 1.25;
             margin-bottom: 25px;
             text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
         .hero p {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 35px;
             font-weight: 300;
         }
@@ -108,13 +108,13 @@
         .btn-gold {
             background: linear-gradient(135deg, var(--gold-light), var(--gold-main), var(--gold-dark));
             color: #000;
-            padding: 16px 36px;
+            padding: 14px 32px;
             font-weight: 700;
             border-radius: 4px;
             text-decoration: none;
             letter-spacing: 1px;
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 12px;
             box-shadow: 0 4px 20px var(--accent-glow);
             transition: 0.3s;
             border: none;
@@ -125,18 +125,20 @@
         .btn-outline {
             border: 1px solid var(--gold-main);
             color: var(--gold-light);
-            padding: 16px 36px;
+            padding: 14px 32px;
             font-weight: 600;
             border-radius: 4px;
             text-decoration: none;
             letter-spacing: 1px;
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 12px;
             transition: 0.3s;
+            background: transparent;
+            cursor: pointer;
         }
         .btn-outline:hover { background: rgba(212, 175, 55, 0.1); }
 
-        /* Sections Layout */
+        /* Layout Container */
         .container { max-width: 1200px; margin: 0 auto; padding: 90px 20px; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 {
@@ -145,8 +147,30 @@
             color: var(--gold-light);
             margin-bottom: 15px;
         }
-        .section-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 15px; }
+        .section-header p { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 15px; line-height: 1.6; }
         .gold-divider { width: 70px; height: 2px; background: var(--gold-main); margin: 20px auto 0; }
+
+        /* Verse Banner Card */
+        .verse-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(18,26,38,0.9));
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .verse-arabic {
+            font-size: 28px;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+            font-family: serif;
+            line-height: 1.8;
+        }
+        .verse-translation {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
 
         /* Grid System & Cards */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; align-items: center; }
@@ -206,40 +230,73 @@
             background: linear-gradient(145deg, rgba(18,26,38,0.9), rgba(8,13,20,0.95));
             border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
-            padding: 50px;
+            padding: 45px;
             max-width: 650px;
             margin: 0 auto;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
-        .form-group { margin-bottom: 22px; }
-        .form-group label { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-light); margin-bottom: 8px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-light); margin-bottom: 8px; }
         .form-group input, .form-group select {
             width: 100%;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 14px;
+            padding: 13px;
             border-radius: 4px;
             color: #fff;
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
             transition: 0.3s;
         }
         .form-group input:focus, .form-group select:focus { border-color: var(--gold-main); background: rgba(255,255,255,0.07); }
 
-        /* Floating WhatsApp Button */
+        /* Modals (Admin & Auth) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: var(--bg-dark);
+            border: 1px solid var(--gold-main);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 0 40px var(--accent-glow);
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 24px; color: var(--gold-main); cursor: pointer;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+        th, td { border: 1px solid rgba(255,255,255,0.1); padding: 10px; text-align: left; }
+        th { background: rgba(212,175,55,0.2); color: var(--gold-light); }
+
+        /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25d366;
             color: #fff;
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 28px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-decoration: none;
             z-index: 1000;
@@ -279,7 +336,8 @@
             <li><a href="#about">About</a></li>
             <li><a href="#courses">Courses</a></li>
             <li><a href="#pricing">Plans</a></li>
-            <li><a href="#register">Free Trial</a></li>
+            <li><a href="#register">Register / Sign Up</a></li>
+            <li><button onclick="openLoginModal()" class="btn-outline" style="padding: 8px 16px;">Login</button></li>
         </ul>
     </nav>
 </header>
@@ -289,9 +347,9 @@
 <!-- HOME SECTION -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <div class="hero-tagline">International Quran Institute</div>
+        <div class="hero-tagline">International Online Quran Institute</div>
         <h1>Learn Holy Quran Online With Certified Expert Tutors</h1>
-        <p>1-on-1 Interactive Live Classes for Kids, Adults, Beginners & Advanced Students Worldwide.</p>
+        <p>Comprehensive 1-on-1 Interactive Classes tailored for Children, Male Adults, and Female Adults Worldwide. Master Recitation with Tajweed, Hifz, and Essential Islamic Knowledge.</p>
         <div class="hero-btns">
             <a href="#register" class="btn-gold">BOOK 3-DAY FREE TRIAL</a>
             <a href="#courses" class="btn-outline">EXPLORE COURSES</a>
@@ -299,64 +357,71 @@
     </div>
 </section>
 
-<!-- ABOUT SECTION (Concept: Who We Are & Certified Tutors) -->
+<!-- ABOUT SECTION (Concept & Quran Ayats) -->
 <section id="about" class="container">
     <div class="section-header">
         <h2>About Our Academy</h2>
-        <p>Empowering Muslims globally with authentic Quranic education</p>
+        <p>Nurturing hearts with authentic Quranic recitation, memorization, and understanding</p>
         <div class="gold-divider"></div>
+    </div>
+
+    <!-- Quranic Verse Display -->
+    <div class="verse-box">
+        <div class="verse-arabic">"وَوَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا"</div>
+        <div class="verse-translation">"...and recite the Qur'an with measured recitation." (Surah Al-Muzzammil 73:4)</div>
     </div>
 
     <div class="grid-2">
         <div>
-            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=800" alt="Adult Quran Student" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <!-- Replaced image with adult male studying/reciting Quran -->
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=800" alt="Adult Male Reading Quran" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
         <div style="line-height:1.8; color:var(--text-muted);">
-            <h3 style="color:var(--gold-light); font-size:26px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Online Quran Teaching</h3>
-            <p>Welcome to <b>Al Noor Quran Academy</b>, an international online Islamic learning center. We offer personalized 1-on-1 live classes designed specifically for kids, male adults, and female adults.</p>
+            <h3 style="color:var(--gold-light); font-size:24px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Adult & Child Online Quran Education</h3>
+            <p>At <b>Al Noor Quran Academy</b>, we are committed to helping Muslims worldwide achieve correct Quran recitation according to classical Tajweed rules. Whether you are an adult beginner starting from zero or a child learning Noorani Qaida, our tailored sessions guarantee steady progress.</p>
             <br>
-            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Certified Male & Female Scholars:</b> Learn under experienced Quran Tutors trained in Tajweed and Hifz.</p>
-            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Flexible Schedules:</b> Choose class timings that suit your daily routine in North America, Europe, or the Middle East.</p>
-            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Interactive Zoom/Skype Sessions:</b> Live screen sharing and audio correction for perfect pronunciation.</p>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Qualified Male & Female Scholars:</b> Learn under experienced tutors proficient in English, Urdu, and Arabic.</p>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Flexible International Schedules:</b> We offer customized class slots for USA, UK, Canada, Australia, and Middle East time zones.</p>
+            <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Interactive 1-on-1 Sessions:</b> Individual attention ensures focused learning without distractions.</p>
         </div>
     </div>
 </section>
 
-<!-- COURSES SECTION (Concept: Kids, Adults & Advanced Programs) -->
+<!-- COURSES SECTION -->
 <section id="courses" class="container">
     <div class="section-header">
-        <h2>Our Specialized Programs</h2>
-        <p>Structured Quranic and Islamic courses for all age groups</p>
+        <h2>Specialized Academic Programs</h2>
+        <p>Structured Quranic curriculum for toddlers, young adults, and mature learners</p>
         <div class="gold-divider"></div>
     </div>
 
     <div class="grid-3">
         <!-- Kids Qaida Course -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=600" alt="Child Learning Quran">
+            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=600" alt="Child Learning Quran">
             <div class="feature-card-body">
                 <h3>Noorani Qaida For Kids</h3>
-                <p>Designed for children and beginners to master Arabic alphabet recognition, basic rules, and correct pronunciation step-by-step.</p>
+                <p>Interactive step-by-step foundation course covering Arabic letters, Makharij (pronunciation points), joint letters, and basic reading rules for children.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Child</a>
             </div>
         </div>
 
-        <!-- Adult Quran Reading -->
+        <!-- Adult Quran Recitation (Replaced Image to Adult Male) -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Adult Reading Quran">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Adult Male Reciting Quran">
             <div class="feature-card-body">
-                <h3>Quran Recitation For Adults</h3>
-                <p>Tailored specifically for male and female adult learners to improve fluency, apply Tajweed rules, and recite beautifully.</p>
+                <h3>Adult Quran & Tajweed Course</h3>
+                <p>Designed for adult brothers and sisters seeking to rectify pronunciation errors, practice continuous recitation, and memorize essential Surahs.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Adult</a>
             </div>
         </div>
 
-        <!-- Quran Memorization (Hifz) -->
+        <!-- Hifz Program -->
         <div class="feature-card">
             <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=600" alt="Quran Memorization">
             <div class="feature-card-body">
-                <h3>Quran Memorization (Hifz)</h3>
-                <p>Comprehensive 1-on-1 Hifz program with daily lesson submission and revision supervised by certified Huffaz tutors.</p>
+                <h3>Full Hifz-ul-Quran Program</h3>
+                <p>Personalized memorization track with structured daily Sabaq (new lesson), Sabqi (recent revision), and Manzil (long-term revision) under Huffaz.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Start Hifz</a>
             </div>
         </div>
@@ -366,8 +431,8 @@
 <!-- PRICING SECTION -->
 <section id="pricing" class="container">
     <div class="section-header">
-        <h2>Affordable Monthly Plans</h2>
-        <p>Transparent fee structure with no registration fees</p>
+        <h2>Transparent Monthly Plans</h2>
+        <p>No admission fee. Monthly fee plans after your 3-Day Free Trial.</p>
         <div class="gold-divider"></div>
     </div>
 
@@ -376,21 +441,21 @@
             <h3>3 Days / Week</h3>
             <div class="price">$35 <span>/ Month</span></div>
             <ul class="pricing-features">
-                <li><i class="fas fa-check"></i> 1-on-1 Live Sessions</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Per Class</li>
-                <li><i class="fas fa-check"></i> Male & Female Tutors</li>
+                <li><i class="fas fa-check"></i> 12 Live Classes / Month</li>
+                <li><i class="fas fa-check"></i> 30 Minutes Individual Class</li>
+                <li><i class="fas fa-check"></i> Choice of Male or Female Tutor</li>
             </ul>
             <a href="#register" class="btn-outline" style="display:block;">Select Plan</a>
         </div>
 
         <div class="pricing-card popular">
-            <div class="popular-badge">MOST POPULAR</div>
+            <div class="popular-badge">MOST RECOMMENDED</div>
             <h3>4 Days / Week</h3>
             <div class="price">$45 <span>/ Month</span></div>
             <ul class="pricing-features">
-                <li><i class="fas fa-check"></i> 1-on-1 Live Sessions</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Per Class</li>
-                <li><i class="fas fa-check"></i> Progress Tracking Reports</li>
+                <li><i class="fas fa-check"></i> 16 Live Classes / Month</li>
+                <li><i class="fas fa-check"></i> 30 Minutes Individual Class</li>
+                <li><i class="fas fa-check"></i> Monthly Progress Reports</li>
             </ul>
             <a href="#register" class="btn-gold" style="display:block;">Select Plan</a>
         </div>
@@ -399,62 +464,179 @@
             <h3>Weekend Plan</h3>
             <div class="price">$30 <span>/ Month</span></div>
             <ul class="pricing-features">
-                <li><i class="fas fa-check"></i> Saturday & Sunday</li>
-                <li><i class="fas fa-check"></i> 30 Minutes Per Class</li>
-                <li><i class="fas fa-check"></i> Flexible Schedule</li>
+                <li><i class="fas fa-check"></i> Saturday & Sunday Only</li>
+                <li><i class="fas fa-check"></i> 30 Minutes Individual Class</li>
+                <li><i class="fas fa-check"></i> Ideal for Busy Professionals</li>
             </ul>
             <a href="#register" class="btn-outline" style="display:block;">Select Plan</a>
         </div>
     </div>
 </section>
 
-<!-- REGISTER SECTION -->
+<!-- SIGN UP / REGISTRATION SECTION -->
 <section id="register" class="container">
     <div class="section-header">
-        <h2>Book A 3-Day Free Trial</h2>
-        <p>No credit card required. Experience live class first.</p>
+        <h2>Student Registration & Sign Up</h2>
+        <p>Create your student profile and request your 3-Day Free Trial class</p>
         <div class="gold-divider"></div>
     </div>
 
     <div class="form-wrapper">
         <form onsubmit="handleRegistration(event)">
             <div class="form-group">
-                <label>Student Name</label>
-                <input type="text" id="sName" placeholder="Enter Full Name" required>
+                <label>Full Name</label>
+                <input type="text" id="regName" placeholder="Enter Full Name" required>
             </div>
             <div class="form-group">
-                <label>Select Category</label>
-                <select id="sCategory">
-                    <option>Child Student (Kids Qaida / Nazra)</option>
-                    <option>Adult Male Student (Quran / Tajweed)</option>
-                    <option>Adult Female Student (Female Tutor)</option>
-                    <option>Hifz-ul-Quran Student</option>
+                <label>Email Address</label>
+                <input type="email" id="regEmail" placeholder="Enter Email Address" required>
+            </div>
+            <div class="form-group">
+                <label>Account Role</label>
+                <select id="regRole">
+                    <option value="Student">Student / Parent</option>
+                    <option value="Admin">Admin Account (Special Access)</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>WhatsApp Number</label>
-                <input type="tel" id="sPhone" placeholder="+92 330 9133382" required>
+                <label>Selected Course</label>
+                <select id="regCourse">
+                    <option>Noorani Qaida (Kids)</option>
+                    <option>Adult Quran Recitation (Male)</option>
+                    <option>Adult Quran Recitation (Female Tutor)</option>
+                    <option>Hifz-ul-Quran Program</option>
+                </select>
             </div>
-            <button type="submit" class="btn-gold" style="width:100%; border:none; margin-top:10px;">SUBMIT & CONNECT WHATSAPP</button>
+            <div class="form-group">
+                <label>WhatsApp Contact Number</label>
+                <input type="tel" id="regPhone" placeholder="+92 330 9133382" required>
+            </div>
+            <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;">COMPLETE SIGN UP & CONNECT WHATSAPP</button>
         </form>
     </div>
 </section>
 
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+        <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+        <h3 style="font-family:'Cinzel', serif; color:var(--gold-light); margin-bottom:20px; text-align:center;">User / Admin Login</h3>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="loginEmail" required placeholder="admin@alnoor.com or your email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPass" required placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn-gold" style="width:100%;">LOGIN NOW</button>
+        </form>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD MODAL (Hidden from nav) -->
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('adminModal')">&times;</span>
+        <h2 style="font-family:'Cinzel', serif; color:var(--gold-main); margin-bottom:10px;">Admin Control Panel</h2>
+        <p style="color:var(--text-muted); font-size:13px;">Registered Students & Trial Applications</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+                <!-- Dynamically populated -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <footer>
     <p><b>Al Noor Quran Academy</b> — Official International Online Quran Portal</p>
-    <p style="margin-top:8px;">Contact: syedshaha289@gmail.com | Phone: +92 330 9133382</p>
+    <p style="margin-top:8px;">Contact Email: syedshaha289@gmail.com | Phone: +92 330 9133382</p>
 </footer>
 
 <script>
+    // Local database initialization
+    if(!localStorage.getItem('registeredUsers')) {
+        localStorage.setItem('registeredUsers', JSON.stringify([
+            {name: 'Demo Admin', email: 'admin@alnoor.com', course: 'All Courses', phone: '+923309133382', role: 'Admin'}
+        ]));
+    }
+
     function handleRegistration(e) {
         e.preventDefault();
-        let name = document.getElementById('sName').value;
-        let category = document.getElementById('sCategory').value;
-        let phone = document.getElementById('sPhone').value;
+        let name = document.getElementById('regName').value;
+        let email = document.getElementById('regEmail').value;
+        let role = document.getElementById('regRole').value;
+        let course = document.getElementById('regCourse').value;
+        let phone = document.getElementById('regPhone').value;
 
-        let waMsg = `Assalam-o-Alaikum,%20New%20Free%20Trial%20Booking:%0AName:%20${name}%0ACategory:%20${category}%0APhone:%20${phone}`;
-        window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
-        alert("Registration Successful! Connecting to WhatsApp.");
+        let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        users.push({ name, email, role, course, phone });
+        localStorage.setItem('registeredUsers', JSON.stringify(users));
+
+        if(role === 'Admin') {
+            alert("Admin Sign Up detected! Opening Admin Portal...");
+            showAdminDashboard();
+        } else {
+            let waMsg = `Assalam-o-Alaikum,%20New%20Student%20Registration:%0AName:%20${name}%0AEmail:%20${email}%0ACourse:%20${course}%0APhone:%20${phone}`;
+            window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
+            alert("Sign Up Successful! Redirecting to WhatsApp.");
+        }
+    }
+
+    function openLoginModal() {
+        document.getElementById('loginModal').style.display = 'flex';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    function handleLogin(e) {
+        e.preventDefault();
+        let email = document.getElementById('loginEmail').value;
+        let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+        let foundUser = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+        if (foundUser && foundUser.role === 'Admin') {
+            closeModal('loginModal');
+            showAdminDashboard();
+        } else if (foundUser) {
+            closeModal('loginModal');
+            alert(`Welcome back, ${foundUser.name}! Your registered course: ${foundUser.course}`);
+        } else {
+            alert("Account not found. Please Sign Up first.");
+        }
+    }
+
+    function showAdminDashboard() {
+        let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        let tbody = document.getElementById('adminTableBody');
+        tbody.innerHTML = '';
+
+        users.forEach(u => {
+            let tr = `<tr>
+                <td>${u.name}</td>
+                <td>${u.email}</td>
+                <td>${u.course}</td>
+                <td>${u.phone}</td>
+                <td><b style="color:${u.role === 'Admin' ? 'gold' : 'white'}">${u.role}</b></td>
+            </tr>`;
+            tbody.innerHTML += tr;
+        });
+
+        document.getElementById('adminModal').style.display = 'flex';
     }
 </script>
 
