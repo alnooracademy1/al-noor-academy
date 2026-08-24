@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Qualified Quran Teachers - Al Noor Academy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #060a10;
+            --card-bg: rgba(15, 23, 36, 0.85);
+            --gold-light: #f6e5b8;
+            --gold-main: #d4af37;
+            --gold-dark: #a88418;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(212, 175, 55, 0.22);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); }
+
+        header {
+            background: rgba(6, 10, 16, 0.95);
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gold-light);
+            text-decoration: none;
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h1 { font-family: 'Cinzel', serif; font-size: 36px; color: var(--gold-light); }
+        .section-header p { color: var(--text-muted); margin-top: 10px; }
+
+        .teacher-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        .teacher-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold-main);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
+        }
+        .teacher-info h2 { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 26px; margin-bottom: 6px; }
+        .teacher-info .title { color: var(--gold-main); font-weight: 600; font-size: 14px; margin-bottom: 15px; display: inline-block; }
+        .teacher-info p { color: var(--text-muted); font-size: 14.5px; line-height: 1.8; margin-bottom: 15px; }
+
+        .badge-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .badge { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-main); color: var(--gold-light); padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
+            color: #000; padding: 12px 26px; font-weight: 700; border-radius: 6px;
+            text-decoration: none; font-size: 12px; text-transform: uppercase; display: inline-block; margin-top: 10px;
+        }
+
+        footer { background: #030508; border-top: 1px solid rgba(255,255,255,0.05); padding: 30px; text-align: center; font-size: 13px; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .teacher-card { flex-direction: column; text-align: center; }
+            .teacher-img { width: 140px; height: 140px; }
+            .badge-list { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="brand-logo"><i class="fas fa-quran"></i> AL NOOR ACADEMY</a>
+    <a href="index.html" style="color:var(--gold-main); text-decoration:none; font-weight:600;"><i class="fas fa-arrow-left"></i> Back to Home</a>
+</header>
+
+<div class="container">
+    <div class="section-header">
+        <h1>Our Certified Quran Scholars</h1>
+        <p>Learn Tajweed, Makharij, & Hifz with Qualified Online Tutors</p>
+    </div>
+
+    <!-- TEACHER 1 -->
+    <div class="teacher-card">
+        <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Qari Syed Muhammad Ali" class="teacher-img">
+        <div class="teacher-info">
+            <h2>Qari Syed Muhammad Ali</h2>
+            <span class="title">Senior Tajweed & Hifz Specialist</span>
+            <p>Qari Syed Muhammad Ali has over 8 years of dedicated experience in online Quranic teaching for international students across the UK, USA, and Canada. He specializes in teaching Noorani Qaida to young children, correcting Arabic pronunciation (Makharij), and guiding Huffaz students in revision.</p>
+            <div class="badge-list">
+                <span class="badge">Shahadat-ul-Aalamiyyah</span>
+                <span class="badge">8+ Years Experience</span>
+                <span class="badge">Hifz & Tajweed Specialist</span>
+            </div>
+            <br>
+            <a href="index.html#register" class="btn-gold">BOOK CLASS WITH QARI SYED MUHAMMAD ALI</a>
+        </div>
+    </div>
+
+    <!-- TEACHER 2 -->
+    <div class="teacher-card">
+        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=400" alt="Qari Syed Shair" class="teacher-img">
+        <div class="teacher-info">
+            <h2>Qari Syed Shair</h2>
+            <span class="title">Qirat & Islamic Studies Tutor</span>
+            <p>Qari Syed Shair is well-known for his gentle and interactive teaching approach, making him ideal for young beginners and kids. He focuses on daily Masnoon Duas, step-by-step Namaz guidance, basic Arabic phonetics, and fluent Quran recitation with accurate rules.</p>
+            <div class="badge-list">
+                <span class="badge">Certified Qari</span>
+                <span class="badge">Child Pedagogy Expert</span>
+                <span class="badge">Islamic Studies Instructor</span>
+            </div>
+            <br>
+            <a href="index.html#register" class="btn-gold">BOOK CLASS WITH QARI SYED SHAIR</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><b>Al Noor Quran Academy</b> — Dedicated Online Quranic Education</p>
+</footer>
+
+</body>
+</html>
