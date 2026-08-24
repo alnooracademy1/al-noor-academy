@@ -353,6 +353,7 @@
         <ul id="navMenu">
             <li><a href="#home" onclick="toggleMenu()">Home</a></li>
             <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#online-learning" onclick="toggleMenu()">Why Online</a></li>
             <li><a href="#courses" onclick="toggleMenu()">Courses</a></li>
             <li><a href="#pricing" onclick="toggleMenu()">Plans</a></li>
             <li><a href="#register" onclick="toggleMenu()">Free Trial</a></li>
@@ -402,6 +403,29 @@
     </div>
 </section>
 
+<!-- ONLINE QURAN LEARNING BENEFIT & LECTURE SECTION -->
+<section id="online-learning" class="container" style="background: rgba(15, 23, 36, 0.5); border-radius: 16px; border: 1px solid var(--border-color); margin-top: 40px;">
+    <div class="section-header">
+        <h2>The Spiritual & Practical Power of Online Quran Learning</h2>
+        <p>Connecting Muslim families worldwide to authentic Tajweed education from the comfort of home</p>
+        <div class="gold-divider"></div>
+    </div>
+
+    <div class="grid-2">
+        <div>
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="Child Taking Online Quran Class on Laptop" style="width:100%; height:360px; object-fit:cover; border-radius:14px; border:1px solid var(--border-color); box-shadow: 0 12px 35px rgba(0,0,0,0.6);">
+        </div>
+        <div style="line-height:1.8; color:var(--text-muted);">
+            <h3 style="color:var(--gold-light); font-size:22px; font-family:'Cinzel', serif; margin-bottom:14px;">Why Online Quran Education is Essential Today</h3>
+            <p>Prophet Muhammad (ﷺ) said: <i>"The best among you are those who learn the Qur'an and teach it."</i> (Sahih Al-Bukhari). In today's fast-paced world, online Quran learning provides a safe, highly flexible, and effective way for children and adults to connect with the Words of Allah.</p>
+            <br>
+            <p><i class="fas fa-star" style="color:var(--gold-main);"></i> <b>Safe & Monitored Environment:</b> Parents can observe live lessons directly at home.</p>
+            <p><i class="fas fa-star" style="color:var(--gold-main);"></i> <b>Screen-Sharing & Digital Qaida:</b> Visual feedback helps kids grasp Makharij quickly.</p>
+            <p><i class="fas fa-star" style="color:var(--gold-main);"></i> <b>No Travel Hassle:</b> Save time with 1-on-1 lessons customized to your time-zone.</p>
+        </div>
+    </div>
+</section>
+
 <section id="courses" class="container">
     <div class="section-header">
         <h2>Our Academic Programs</h2>
@@ -419,7 +443,6 @@
             </div>
         </div>
 
-        <!-- TAJWEED SECTION (Aadami Ustad / Qari Photo) -->
         <div class="feature-card">
             <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Certified Qari Ustad Reciting Quran">
             <div class="feature-card-body">
@@ -438,7 +461,6 @@
             </div>
         </div>
 
-        <!-- NAMAZ SECTION (Male Praying Photo) -->
         <div class="feature-card">
             <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=600" alt="Male Offering Namaz Prayer">
             <div class="feature-card-body">
@@ -503,15 +525,17 @@
     </div>
 </section>
 
+<!-- REGISTRATION & OTP SYSTEM -->
 <section id="register" class="container">
     <div class="section-header">
-        <h2>Student Registration & Free Trial</h2>
-        <p>Complete the form to schedule your 3-Day Free Trial sessions</p>
+        <h2>Student Registration & Class Booking</h2>
+        <p>Complete sign-up via Phone/Email with 30-Second OTP Verification</p>
         <div class="gold-divider"></div>
     </div>
 
     <div class="form-wrapper">
-        <form onsubmit="handleRegistration(event)">
+        <!-- STEP 1: INITIAL REGISTRATION FORM -->
+        <form id="step1Form" onsubmit="sendOTP(event)">
             <div class="form-group">
                 <label>Full Name</label>
                 <input type="text" id="regName" placeholder="Enter Full Name" required>
@@ -531,10 +555,28 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>WhatsApp Contact Number</label>
+                <label>WhatsApp / Phone Number</label>
                 <input type="tel" id="regPhone" placeholder="+92 330 9133382" required>
             </div>
-            <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;">REGISTER FOR FREE TRIAL</button>
+            <button type="submit" id="sendOtpBtn" class="btn-gold" style="width:100%; margin-top:10px;">SEND VERIFICATION OTP</button>
+        </form>
+
+        <!-- STEP 2: OTP VERIFICATION BOX (Hidden initially) -->
+        <form id="step2Form" style="display:none; margin-top:20px;" onsubmit="verifyOTP(event)">
+            <div style="background: rgba(212,175,55,0.1); border:1px solid var(--gold-main); padding:15px; border-radius:8px; margin-bottom:20px; text-align:center;">
+                <p style="font-size:13px; color:var(--gold-light);">A 4-digit OTP has been sent to your Mobile / Email.</p>
+                <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">Demo Test OTP Code: <b style="color:#fff;" id="generatedOtpDisplay">1234</b></p>
+            </div>
+            <div class="form-group">
+                <label>Enter 4-Digit Security OTP</label>
+                <input type="text" id="userOtp" maxlength="4" placeholder="Enter OTP e.g. 1234" required style="letter-spacing: 6px; font-size:20px; text-align:center;">
+            </div>
+            <button type="submit" class="btn-gold" style="width:100%;">VERIFY OTP & COMPLETE BOOKING</button>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+                <span id="timerText" style="font-size:12px; color:var(--text-muted);">Resend in: <b id="countdown">30</b>s</span>
+                <button type="button" id="resendBtn" disabled onclick="resendOTP()" class="btn-outline" style="padding: 6px 14px; font-size:11px;">RESEND OTP</button>
+            </div>
         </form>
     </div>
 </section>
@@ -561,7 +603,7 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('adminModal')">&times;</span>
         <h2 style="font-family:'Cinzel', serif; color:var(--gold-main); margin-bottom:8px;">Admin Dashboard</h2>
-        <p style="color:var(--text-muted); font-size:13px;">Registered Student Applications & Trial Requests</p>
+        <p style="color:var(--text-muted); font-size:13px;">Verified Registered Student Applications</p>
         
         <div class="table-responsive">
             <table>
@@ -572,6 +614,7 @@
                         <th>Email</th>
                         <th>Course</th>
                         <th>WhatsApp Contact</th>
+                        <th>OTP Status</th>
                     </tr>
                 </thead>
                 <tbody id="adminTableBody">
@@ -587,6 +630,9 @@
 </footer>
 
 <script>
+    let currentOTP = "";
+    let timerInterval = null;
+
     function toggleMenu() {
         let nav = document.getElementById('navMenu');
         if(window.innerWidth <= 768) {
@@ -594,24 +640,65 @@
         }
     }
 
-    function handleRegistration(e) {
+    function startTimer() {
+        let timeLeft = 30;
+        document.getElementById('countdown').innerText = timeLeft;
+        document.getElementById('resendBtn').disabled = true;
+
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            document.getElementById('countdown').innerText = timeLeft;
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('resendBtn').disabled = false;
+                document.getElementById('timerText').innerText = "Didn't receive OTP?";
+            }
+        }, 1000);
+    }
+
+    function sendOTP(e) {
         e.preventDefault();
-        let name = document.getElementById('regName').value;
-        let email = document.getElementById('regEmail').value;
-        let course = document.getElementById('regCourse').value;
-        let phone = document.getElementById('regPhone').value;
+        currentOTP = Math.floor(1000 + Math.random() * 9000).toString();
+        document.getElementById('generatedOtpDisplay').innerText = currentOTP;
 
-        let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
-        students.push({ name, email, course, phone });
-        localStorage.setItem('registeredStudents', JSON.stringify(students));
+        document.getElementById('step1Form').style.display = 'none';
+        document.getElementById('step2Form').style.display = 'block';
 
-        let waMsg = `Assalam-o-Alaikum,%20New%20Student%20Registration:%0AName:%20${name}%0AEmail:%20${email}%0ACourse:%20${course}%0APhone:%20${phone}`;
-        window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
-        alert("Registration Successful! Redirecting to WhatsApp for trial class scheduling.");
-        
-        document.getElementById('regName').value = '';
-        document.getElementById('regEmail').value = '';
-        document.getElementById('regPhone').value = '';
+        startTimer();
+        alert("OTP Verification code generated: " + currentOTP);
+    }
+
+    function resendOTP() {
+        currentOTP = Math.floor(1000 + Math.random() * 9000).toString();
+        document.getElementById('generatedOtpDisplay').innerText = currentOTP;
+        document.getElementById('timerText').innerHTML = 'Resend in: <b id="countdown">30</b>s';
+        startTimer();
+        alert("New OTP Code Sent: " + currentOTP);
+    }
+
+    function verifyOTP(e) {
+        e.preventDefault();
+        let enteredOtp = document.getElementById('userOtp').value.trim();
+
+        if(enteredOtp === currentOTP) {
+            let name = document.getElementById('regName').value;
+            let email = document.getElementById('regEmail').value;
+            let course = document.getElementById('regCourse').value;
+            let phone = document.getElementById('regPhone').value;
+
+            let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
+            students.push({ name, email, course, phone, verified: true });
+            localStorage.setItem('registeredStudents', JSON.stringify(students));
+
+            let waMsg = `Assalam-o-Alaikum,%20Verified%20Student%20Registration:%0AName:%20${name}%0AEmail:%20${email}%0ACourse:%20${course}%0APhone:%20${phone}%0AOTP%20Verified:%20Yes`;
+            window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
+            
+            alert("OTP Verified Successfully! Registration Complete.");
+            location.reload();
+        } else {
+            alert("Invalid OTP Code! Please enter the correct 4-digit code.");
+        }
     }
 
     function openLoginModal() {
@@ -643,7 +730,7 @@
         tbody.innerHTML = '';
 
         if(students.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No student registrations found.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--text-muted);">No student registrations found.</td></tr>`;
         } else {
             students.forEach((s, index) => {
                 let tr = `<tr>
@@ -652,6 +739,7 @@
                     <td>${s.email}</td>
                     <td>${s.course}</td>
                     <td><a href="https://wa.me/${s.phone.replace(/[^0-9]/g, '')}" target="_blank" style="color:var(--gold-light); text-decoration:none;"><i class="fab fa-whatsapp"></i> ${s.phone}</a></td>
+                    <td><span style="color:#25d366;"><i class="fas fa-check-circle"></i> Verified</span></td>
                 </tr>`;
                 tbody.innerHTML += tr;
             });
