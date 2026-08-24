@@ -1,3 +1,4 @@
+cd ~/al-noor-academy && cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -573,3 +574,7 @@
 
 </body>
 </html>
+EOF
+git add index.html
+git commit -m "Updated Teachers section"
+git push origin main || git push origin master
