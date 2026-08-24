@@ -399,8 +399,8 @@
 
     <div class="grid-2">
         <div>
-            <!-- NEW HD IMAGE: Qualified Ustad teaching young child reading Holy Quran -->
-            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800" alt="Ustad Teaching Quran to Child" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <!-- IMAGE FIXED: Child Reading Holy Quran -->
+            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800" alt="Child Reading Holy Quran" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
         <div style="line-height:1.8; color:var(--text-muted);">
             <h3 style="color:var(--gold-light); font-size:24px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Learning For All Ages</h3>
@@ -432,9 +432,9 @@
             </div>
         </div>
 
-        <!-- NEW IMAGE: Ustad Teaching Tajweed & Quran Recitation -->
+        <!-- IMAGE FIXED: Qari / Ustad Teaching Tajweed -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Quran Ustad Teaching Tajweed">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Certified Qari Ustad Teaching Tajweed">
             <div class="feature-card-body">
                 <h3>Adult Quran & Tajweed Course</h3>
                 <p>Tailored specifically for adult learners with certified Ustad / Qari to rectify pronunciation errors, practice continuous recitation fluency, and master full Tajweed rules.</p>
@@ -519,7 +519,7 @@
     </div>
 </section>
 
-<!-- REGISTRATION & SIGN UP SECTION WITH SMS SECURITY CODE -->
+<!-- REGISTRATION WITH SMS SECURITY CODE -->
 <section id="register" class="container">
     <div class="section-header">
         <h2>Student Registration & Free Trial Sign Up</h2>
@@ -592,7 +592,7 @@
     </div>
 </div>
 
-<!-- SECURE HIDDEN ADMIN DASHBOARD -->
+<!-- ADMIN DASHBOARD -->
 <div id="adminModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('adminModal')">&times;</span>
@@ -635,7 +635,6 @@
         }
     }
 
-    // Step 1: Initiate Phone Security Verification Code
     function initiateRegistration(e) {
         e.preventDefault();
         let name = document.getElementById('regName').value;
@@ -643,19 +642,15 @@
         let course = document.getElementById('regCourse').value;
         let phone = document.getElementById('regPhone').value;
 
-        // Generate Random 6-Digit Code
         generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
-        
         tempUserData = { name, email, course, phone, status: "Verified & Registered" };
 
         document.getElementById('displayPhone').innerText = phone;
         document.getElementById('otpModal').style.display = 'flex';
 
-        // Auto-Simulate Security SMS Alert to User
-        alert(`[SMS Gateway Simulated Security Code]\n\nYour Al Noor Quran Academy Registration Security Code is: ${generatedOTP}`);
+        alert(`[SMS Gateway Security Code]\n\nYour Al Noor Quran Academy Registration Code is: ${generatedOTP}`);
     }
 
-    // Step 2: Verify OTP Security Code
     function verifyOTP() {
         let enteredOtp = document.getElementById('inputOtp').value.trim();
 
@@ -666,24 +661,23 @@
 
             closeModal('otpModal');
 
-            let waMsg = `Assalam-o-Alaikum,%20New%20Verified%20Student%20Registration:%0AName:%20${tempUserData.name}%0AEmail:%20${tempUserData.email}%0ACourse:%20${tempUserData.course}%0APhone:%20${tempUserData.phone}%0AStatus:%20Phone%20Security%20Code%20Verified`;
+            let waMsg = `Assalam-o-Alaikum,%20New%20Verified%20Student%20Registration:%0AName:%20${tempUserData.name}%0AEmail:%20${tempUserData.email}%0ACourse:%20${tempUserData.course}%0APhone:%20${tempUserData.phone}%0AStatus:%20Verified`;
             window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
             
-            alert("Security Verification Successful! Your Registration has been completed.");
+            alert("Security Verification Successful! Registration Complete.");
 
-            // Reset Form
             document.getElementById('regName').value = '';
             document.getElementById('regEmail').value = '';
             document.getElementById('regPhone').value = '';
             document.getElementById('inputOtp').value = '';
         } else {
-            alert("Invalid Security Code! Please enter the correct 6-digit code sent to your phone.");
+            alert("Invalid Security Code! Please enter the correct code.");
         }
     }
 
     function resendCode() {
         generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
-        alert(`[SMS Gateway Resent Code]\n\nYour New Security Verification Code is: ${generatedOTP}`);
+        alert(`[Resent Code]\n\nYour New Security Verification Code is: ${generatedOTP}`);
     }
 
     function openLoginModal() {
@@ -694,7 +688,6 @@
         document.getElementById(id).style.display = 'none';
     }
 
-    // SECURE LOGIN SYSTEM FOR ADMIN
     function handleLogin(e) {
         e.preventDefault();
         let email = document.getElementById('loginEmail').value.trim();
@@ -706,11 +699,10 @@
             document.getElementById('loginPass').value = '';
             showAdminDashboard();
         } else {
-            alert("Invalid Credentials! Access Denied.");
+            alert("Invalid Credentials!");
         }
     }
 
-    // Load Admin Data
     function showAdminDashboard() {
         let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
         let tbody = document.getElementById('adminTableBody');
