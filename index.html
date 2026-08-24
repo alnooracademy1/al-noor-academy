@@ -9,14 +9,14 @@
     <style>
         :root {
             --bg-dark: #060a10;
-            --card-bg: rgba(15, 23, 36, 0.85);
+            --card-bg: rgba(15, 23, 36, 0.95);
             --gold-light: #f6e5b8;
             --gold-main: #d4af37;
             --gold-dark: #a88418;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --accent-glow: rgba(212, 175, 55, 0.2);
-            --border-color: rgba(212, 175, 55, 0.22);
+            --accent-glow: rgba(212, 175, 55, 0.25);
+            --border-color: rgba(212, 175, 55, 0.3);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -38,7 +38,7 @@
 
         /* HEADER */
         header {
-            background: rgba(6, 10, 16, 0.85);
+            background: rgba(6, 10, 16, 0.9);
             backdrop-filter: blur(16px);
             padding: 16px 8%;
             display: flex;
@@ -47,7 +47,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .brand-logo {
             font-family: 'Cinzel', serif;
@@ -163,12 +163,12 @@
         }
         .btn-google:hover { background: #f1f1f1; }
 
-        /* LAYOUT & CARDS */
+        /* CONTAINER & HEADERS */
         .container { max-width: 1240px; margin: 0 auto; padding: 80px 20px; }
-        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
         .section-header h2 {
             font-family: 'Cinzel', serif;
-            font-size: 34px;
+            font-size: 36px;
             color: var(--gold-light);
             margin-bottom: 12px;
         }
@@ -178,22 +178,41 @@
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 45px; align-items: center; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
 
-        /* TEACHERS SECTION CARDS */
-        .teacher-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 35px;
-            margin-bottom: 35px;
+        /* HIGH-END PROFESSIONAL TEACHERS SECTION */
+        .teachers-wrapper {
             display: flex;
-            gap: 35px;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: 0.3s;
+            flex-direction: column;
+            gap: 40px;
         }
-        .teacher-card:hover { border-color: var(--gold-main); transform: translateY(-4px); }
-        .teacher-img-frame { flex-shrink: 0; }
-        .teacher-img {
+        .teacher-card-prof {
+            background: linear-gradient(145deg, rgba(15, 23, 36, 0.95), rgba(10, 16, 26, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .teacher-card-prof::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--gold-light), var(--gold-main), var(--gold-dark));
+        }
+        .teacher-card-prof:hover {
+            border-color: var(--gold-main);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+        }
+        .teacher-img-box {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .teacher-img-prof {
             width: 190px;
             height: 190px;
             border-radius: 50%;
@@ -202,12 +221,40 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
             display: block;
         }
-        .teacher-info h3 { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 26px; margin-bottom: 6px; }
-        .teacher-info .title { color: var(--gold-main); font-weight: 600; font-size: 14px; margin-bottom: 14px; display: inline-block; }
-        .teacher-info p { color: var(--text-muted); font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
-
-        .badge-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-        .badge { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-main); color: var(--gold-light); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+        .teacher-details-prof h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .teacher-details-prof .designation {
+            color: var(--gold-main);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .teacher-details-prof p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+        .badge-group { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+        .badge-item {
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--gold-main);
+            color: var(--gold-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
         /* REVIEWS */
         .review-card {
@@ -283,9 +330,9 @@
             nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(6, 10, 16, 0.98); padding: 22px; border-bottom: 1px solid var(--gold-main); }
             nav ul.active { display: flex; }
             .hero h1 { font-size: 32px; }
-            .teacher-card { flex-direction: column; text-align: center; }
-            .teacher-img { width: 150px; height: 150px; }
-            .badge-list { justify-content: center; }
+            .teacher-card-prof { flex-direction: column; text-align: center; padding: 28px 20px; }
+            .teacher-img-prof { width: 150px; height: 150px; }
+            .badge-group { justify-content: center; }
             .top-bar { flex-direction: column; gap: 8px; text-align: center; }
         }
     </style>
@@ -353,47 +400,49 @@
     </div>
 </section>
 
-<!-- FULL DETAILED TEACHERS SECTION -->
+<!-- PROFESSIONAL OUR TEACHERS SECTION -->
 <section id="teachers" class="container">
     <div class="section-header">
-        <h2>Our Certified Quran Scholars</h2>
+        <h2>Our Certified Quran Faculty</h2>
         <p>Learn Tajweed, Makharij, & Hifz with highly qualified, experienced, and dedicated tutors</p>
         <div class="gold-divider"></div>
     </div>
 
-    <!-- TEACHER 1 -->
-    <div class="teacher-card">
-        <div class="teacher-img-frame">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Qari Syed Muhammad Ali" class="teacher-img">
-        </div>
-        <div class="teacher-info">
-            <h3>Qari Syed Muhammad Ali</h3>
-            <span class="title">Senior Tajweed & Hifz Specialist</span>
-            <p>Qari Syed Muhammad Ali has over 8 years of dedicated experience in online Quranic teaching for international students across the UK, USA, and Canada. He specializes in teaching Noorani Qaida to young children, correcting Arabic pronunciation (Makharij), and guiding Huffaz students in revision.</p>
-            <div class="badge-list">
-                <span class="badge"><i class="fas fa-certificate"></i> Shahadat-ul-Aalamiyyah</span>
-                <span class="badge"><i class="fas fa-clock"></i> 8+ Years Experience</span>
-                <span class="badge"><i class="fas fa-star"></i> Hifz & Tajweed Specialist</span>
+    <div class="teachers-wrapper">
+        <!-- TEACHER 1 -->
+        <div class="teacher-card-prof">
+            <div class="teacher-img-box">
+                <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Qari Syed Muhammad Ali" class="teacher-img-prof">
             </div>
-            <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED MUHAMMAD ALI</a>
+            <div class="teacher-details-prof">
+                <h3>Qari Syed Muhammad Ali</h3>
+                <span class="designation">Senior Tajweed & Hifz Specialist</span>
+                <p>Qari Syed Muhammad Ali has over 8 years of dedicated experience in online Quranic teaching for international students across the UK, USA, and Canada. He specializes in teaching Noorani Qaida to young children, correcting Arabic pronunciation (Makharij), and guiding Huffaz students in revision.</p>
+                <div class="badge-group">
+                    <span class="badge-item"><i class="fas fa-certificate"></i> Shahadat-ul-Aalamiyyah</span>
+                    <span class="badge-item"><i class="fas fa-clock"></i> 8+ Years Experience</span>
+                    <span class="badge-item"><i class="fas fa-star"></i> Hifz & Tajweed Specialist</span>
+                </div>
+                <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED MUHAMMAD ALI</a>
+            </div>
         </div>
-    </div>
 
-    <!-- TEACHER 2 -->
-    <div class="teacher-card">
-        <div class="teacher-img-frame">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=400" alt="Qari Syed Shair" class="teacher-img">
-        </div>
-        <div class="teacher-info">
-            <h3>Qari Syed Shair</h3>
-            <span class="title">Qirat & Islamic Studies Tutor</span>
-            <p>Qari Syed Shair is well-known for his gentle and interactive teaching approach, making him ideal for young beginners and kids. He focuses on daily Masnoon Duas, step-by-step Namaz guidance, basic Arabic phonetics, and fluent Quran recitation with accurate rules.</p>
-            <div class="badge-list">
-                <span class="badge"><i class="fas fa-certificate"></i> Certified Qari</span>
-                <span class="badge"><i class="fas fa-child"></i> Child Pedagogy Expert</span>
-                <span class="badge"><i class="fas fa-book-quran"></i> Islamic Studies Instructor</span>
+        <!-- TEACHER 2 -->
+        <div class="teacher-card-prof">
+            <div class="teacher-img-box">
+                <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=400" alt="Qari Syed Shair" class="teacher-img-prof">
             </div>
-            <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED SHAIR</a>
+            <div class="teacher-details-prof">
+                <h3>Qari Syed Shair</h3>
+                <span class="designation">Qirat & Islamic Studies Tutor</span>
+                <p>Qari Syed Shair is well-known for his gentle and interactive teaching approach, making him ideal for young beginners and kids. He focuses on daily Masnoon Duas, step-by-step Namaz guidance, basic Arabic phonetics, and fluent Quran recitation with accurate rules.</p>
+                <div class="badge-group">
+                    <span class="badge-item"><i class="fas fa-certificate"></i> Certified Qari</span>
+                    <span class="badge-item"><i class="fas fa-child"></i> Child Pedagogy Expert</span>
+                    <span class="badge-item"><i class="fas fa-book-quran"></i> Islamic Studies Instructor</span>
+                </div>
+                <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED SHAIR</a>
+            </div>
         </div>
     </div>
 </section>
