@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Noor Quran Academy - Online Quran Institute</title>
+    <title>Al Noor Quran Academy - Premier Online Quran Institute</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #080d14;
-            --card-bg: rgba(18, 26, 38, 0.95);
-            --gold-light: #f3e0aa;
+            --bg-dark: #070b12;
+            --card-bg: rgba(15, 23, 36, 0.95);
+            --gold-light: #f5e3b3;
             --gold-main: #d4af37;
-            --gold-dark: #aa820a;
-            --text-light: #f0f4f8;
-            --text-muted: #a0aec0;
-            --accent-glow: rgba(212, 175, 55, 0.25);
+            --gold-dark: #a88311;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(212, 175, 55, 0.2);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
@@ -23,23 +23,24 @@
 
         /* Top Bar */
         .top-bar {
-            background: linear-gradient(90deg, #05080d, #111a28, #05080d);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 10px 6%;
+            background: linear-gradient(90deg, #030509, #0d1522, #030509);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 10px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
         }
-        .top-bar-info span { margin-right: 20px; color: var(--text-muted); }
-        .top-bar-info i { color: var(--gold-main); margin-right: 6px; }
-        .top-bar-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; }
+        .top-bar-info span { margin-right: 25px; color: var(--text-muted); }
+        .top-bar-info i { color: var(--gold-main); margin-right: 8px; }
+        .top-bar-cta a { color: var(--gold-light); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .top-bar-cta a:hover { color: #fff; }
 
         /* Header Navigation */
         header {
-            background: rgba(8, 13, 20, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 18px 6%;
+            background: rgba(7, 11, 18, 0.92);
+            backdrop-filter: blur(12px);
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,20 +51,20 @@
         }
         .brand-logo {
             font-family: 'Cinzel', serif;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             background: linear-gradient(135deg, #ffffff, var(--gold-light), var(--gold-main));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .brand-logo i { color: var(--gold-main); -webkit-text-fill-color: initial; }
         
-        nav ul { display: flex; gap: 20px; list-style: none; align-items: center; }
-        nav ul a { color: var(--text-light); text-decoration: none; font-size: 13px; font-weight: 500; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul { display: flex; gap: 24px; list-style: none; align-items: center; }
+        nav ul a { color: var(--text-light); text-decoration: none; font-size: 12px; font-weight: 600; transition: 0.3s; text-transform: uppercase; letter-spacing: 1.2px; }
         nav ul a:hover { color: var(--gold-main); }
 
         .menu-toggle { display: none; font-size: 24px; color: var(--gold-main); cursor: pointer; }
@@ -71,46 +72,50 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 85vh;
-            background: linear-gradient(180deg, rgba(8,13,20,0.85) 0%, rgba(8,13,20,0.95) 100%), 
+            min-height: 88vh;
+            background: linear-gradient(180deg, rgba(7,11,18,0.85) 0%, rgba(7,11,18,0.98) 100%), 
                         url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1920') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
         .hero-content { max-width: 900px; z-index: 2; }
         .hero-tagline {
             font-family: 'Cinzel', serif;
             color: var(--gold-main);
-            font-size: 15px;
-            letter-spacing: 3px;
+            font-size: 14px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            font-weight: 700;
         }
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 42px;
-            font-weight: 700;
+            font-size: 46px;
+            font-weight: 800;
             line-height: 1.3;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            margin-bottom: 22px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.9);
         }
         .hero p {
             font-size: 16px;
             color: var(--text-muted);
             line-height: 1.8;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             font-weight: 300;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .hero-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
 
         /* Buttons */
         .btn-gold {
             background: linear-gradient(135deg, var(--gold-light), var(--gold-main), var(--gold-dark));
             color: #000;
-            padding: 13px 30px;
+            padding: 14px 34px;
             font-weight: 700;
             border-radius: 4px;
             text-decoration: none;
@@ -118,54 +123,56 @@
             text-transform: uppercase;
             font-size: 12px;
             box-shadow: 0 4px 20px var(--accent-glow);
-            transition: 0.3s;
+            transition: 0.3s ease;
             border: none;
             cursor: pointer;
         }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4); }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4); }
 
         .btn-outline {
             border: 1px solid var(--gold-main);
             color: var(--gold-light);
-            padding: 13px 30px;
+            padding: 14px 34px;
             font-weight: 600;
             border-radius: 4px;
             text-decoration: none;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 12px;
-            transition: 0.3s;
+            transition: 0.3s ease;
             background: transparent;
             cursor: pointer;
         }
-        .btn-outline:hover { background: rgba(212, 175, 55, 0.1); }
+        .btn-outline:hover { background: rgba(212, 175, 55, 0.12); border-color: var(--gold-light); }
 
-        /* Container Layout */
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-        .section-header { text-align: center; margin-bottom: 50px; }
+        /* Layout Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 90px 20px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 {
             font-family: 'Cinzel', serif;
-            font-size: 34px;
+            font-size: 36px;
             color: var(--gold-light);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
         }
-        .section-header p { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 14px; line-height: 1.6; }
-        .gold-divider { width: 70px; height: 2px; background: var(--gold-main); margin: 18px auto 0; }
+        .section-header p { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 14px; line-height: 1.7; }
+        .gold-divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold-main), transparent); margin: 20px auto 0; }
 
-        /* Verse Banner */
+        /* Verse Section */
         .verse-box {
-            background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(18,26,38,0.95));
-            border: 1px solid rgba(212,175,55,0.3);
+            background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(15,23,36,0.95));
+            border: 1px solid rgba(212,175,55,0.25);
             border-radius: 12px;
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
         .verse-arabic {
-            font-size: 26px;
+            font-size: 28px;
             color: var(--gold-light);
-            margin-bottom: 12px;
-            font-family: serif;
+            margin-bottom: 14px;
+            font-family: 'Traditional Arabic', serif;
             line-height: 1.8;
         }
         .verse-translation {
@@ -174,39 +181,39 @@
             font-size: 14px;
         }
 
-        /* Grid System & Cards */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 50px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
         
         .feature-card {
             background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.18);
-            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
             overflow: hidden;
-            transition: 0.4s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             display: flex;
             flex-direction: column;
         }
         .feature-card:hover {
             border-color: var(--gold-main);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 15px var(--accent-glow);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 20px var(--accent-glow);
         }
-        .feature-card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .feature-card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .feature-card-body h3 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 12px; }
-        .feature-card-body p { color: var(--text-muted); font-size: 13.5px; line-height: 1.7; margin-bottom: 20px; }
+        .feature-card img { width: 100%; height: 230px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .feature-card-body { padding: 28px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .feature-card-body h3 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 14px; }
+        .feature-card-body p { color: var(--text-muted); font-size: 13.5px; line-height: 1.7; margin-bottom: 22px; }
 
-        /* Pricing Cards */
+        /* Pricing Component */
         .pricing-card {
             background: var(--card-bg);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 10px;
-            padding: 35px 25px;
+            border-radius: 12px;
+            padding: 40px 28px;
             text-align: center;
             position: relative;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
         .pricing-card.popular { border: 2px solid var(--gold-main); box-shadow: 0 0 30px var(--accent-glow); }
         .popular-badge {
@@ -214,45 +221,45 @@
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--gold-main);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
             color: #000;
             font-size: 10px;
             font-weight: 800;
-            padding: 4px 14px;
+            padding: 5px 16px;
             border-radius: 20px;
             letter-spacing: 1px;
         }
         .pricing-card h3 { font-family: 'Cinzel', serif; font-size: 22px; color: var(--text-light); margin-bottom: 15px; }
-        .price { font-size: 38px; font-weight: 700; color: var(--gold-light); margin-bottom: 20px; }
+        .price { font-size: 40px; font-weight: 700; color: var(--gold-light); margin-bottom: 22px; }
         .price span { font-size: 13px; color: var(--text-muted); font-weight: 400; }
-        .pricing-features { list-style: none; margin-bottom: 25px; text-align: left; }
-        .pricing-features li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13.5px; color: var(--text-muted); }
-        .pricing-features li i { color: var(--gold-main); margin-right: 10px; }
+        .pricing-features { list-style: none; margin-bottom: 30px; text-align: left; }
+        .pricing-features li { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13.5px; color: var(--text-muted); }
+        .pricing-features li i { color: var(--gold-main); margin-right: 12px; }
 
         /* Form Wrapper */
         .form-wrapper {
-            background: linear-gradient(145deg, rgba(18,26,38,0.95), rgba(8,13,20,0.98));
+            background: linear-gradient(145deg, rgba(15,23,36,0.95), rgba(7,11,18,0.98));
             border: 1px solid rgba(212, 175, 55, 0.25);
-            border-radius: 12px;
-            padding: 40px 30px;
-            max-width: 600px;
+            border-radius: 14px;
+            padding: 45px 35px;
+            max-width: 620px;
             margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
         }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-light); margin-bottom: 8px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-light); margin-bottom: 8px; font-weight: 600; }
         .form-group input, .form-group select {
             width: 100%;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.12);
-            padding: 12px;
-            border-radius: 4px;
+            padding: 14px;
+            border-radius: 6px;
             color: #fff;
             font-size: 14px;
             outline: none;
             transition: 0.3s;
         }
-        .form-group input:focus, .form-group select:focus { border-color: var(--gold-main); background: rgba(255,255,255,0.07); }
+        .form-group input:focus, .form-group select:focus { border-color: var(--gold-main); background: rgba(255,255,255,0.06); }
 
         /* Modal Overlay */
         .modal {
@@ -270,8 +277,8 @@
             background: var(--bg-dark);
             border: 1px solid var(--gold-main);
             border-radius: 12px;
-            padding: 30px 20px;
-            max-width: 750px;
+            padding: 35px 25px;
+            max-width: 780px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
@@ -280,7 +287,7 @@
         }
         .close-modal {
             position: absolute;
-            top: 15px; right: 20px;
+            top: 18px; right: 22px;
             font-size: 24px; color: var(--gold-main); cursor: pointer;
         }
         
@@ -290,7 +297,7 @@
         th, td { border: 1px solid rgba(255,255,255,0.1); padding: 12px 10px; }
         th { background: rgba(212,175,55,0.2); color: var(--gold-light); }
 
-        /* Floating WhatsApp */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -307,20 +314,20 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-decoration: none;
             z-index: 1000;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
         footer {
-            background: #04060a;
+            background: #030508;
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 35px 20px;
+            padding: 40px 20px;
             text-align: center;
             font-size: 13px;
             color: var(--text-muted);
         }
 
-        /* Mobile Styles */
+        /* Responsive Layout */
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             nav ul {
@@ -328,12 +335,12 @@
                 flex-direction: column;
                 position: absolute;
                 top: 100%; left: 0; width: 100%;
-                background: rgba(8, 13, 20, 0.98);
-                padding: 20px;
+                background: rgba(7, 11, 18, 0.98);
+                padding: 25px;
                 border-bottom: 1px solid var(--gold-main);
             }
             nav ul.active { display: flex; }
-            .hero h1 { font-size: 30px; }
+            .hero h1 { font-size: 32px; }
             .top-bar { flex-direction: column; gap: 8px; text-align: center; }
             .top-bar-info span { margin-right: 10px; }
         }
@@ -363,17 +370,17 @@
             <li><a href="#courses" onclick="toggleMenu()">Courses</a></li>
             <li><a href="#pricing" onclick="toggleMenu()">Plans</a></li>
             <li><a href="#register" onclick="toggleMenu()">Free Trial</a></li>
-            <li><button onclick="openLoginModal()" class="btn-outline" style="padding: 7px 16px;">Login</button></li>
+            <li><button onclick="openLoginModal()" class="btn-outline" style="padding: 8px 18px;">Login</button></li>
         </ul>
     </nav>
 </header>
 
 <a href="https://wa.me/923309133382" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- HOME SECTION -->
+<!-- HERO SECTION -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <div class="hero-tagline">Global Online Islamic Institution</div>
+        <div class="hero-tagline">International Quranic Institute</div>
         <h1>Master Holy Quran & Tajweed Online With Certified Tutors</h1>
         <p>1-on-1 Interactive Live Classes tailored for Kids, Adults & Beginners worldwide. Learn Noorani Qaida, Tajweed Rules, Daily Duas, and Hifz from Qualified Male & Female Scholars.</p>
         <div class="hero-btns">
@@ -391,7 +398,6 @@
         <div class="gold-divider"></div>
     </div>
 
-    <!-- Quranic Verse Display -->
     <div class="verse-box">
         <div class="verse-arabic">"وَوَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا"</div>
         <div class="verse-translation">"...and recite the Qur'an with measured recitation." (Surah Al-Muzzammil 73:4)</div>
@@ -400,11 +406,11 @@
     <div class="grid-2">
         <div>
             <!-- HD Image: Young Child Reading Quran -->
-            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800" alt="Child Reading Quran" style="width:100%; height:350px; object-fit:cover; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800" alt="Child Reading Quran" style="width:100%; height:380px; object-fit:cover; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
         </div>
         <div style="line-height:1.8; color:var(--text-muted);">
-            <h3 style="color:var(--gold-light); font-size:24px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Learning For All Ages</h3>
-            <p>At <b>Al Noor Quran Academy</b>, we provide personalized 1-on-1 online classes designed to fit your unique schedule and learning pace. Whether you are an adult learner aiming to correct your Tajweed or a parent seeking qualified teachers for your children, our certified male and female scholars are here to guide you.</p>
+            <h3 style="color:var(--gold-light); font-size:24px; font-family:'Cinzel', serif; margin-bottom:16px;">Dedicated Learning For All Ages</h3>
+            <p>At <b>Al Noor Quran Academy</b>, we provide personalized 1-on-1 online classes designed to fit your unique schedule and learning pace. Whether you are an adult learner aiming to correct your Tajweed or a parent seeking qualified teachers for your children, our certified scholars are here to guide you.</p>
             <br>
             <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Certified Scholars:</b> Experienced Quran Tutors trained in Tajweed and Hifz.</p>
             <p><i class="fas fa-check-circle" style="color:var(--gold-main);"></i> <b>Custom Schedules:</b> Flexible timings for USA, UK, Europe, Canada, Australia & Middle East.</p>
@@ -424,27 +430,27 @@
     <div class="grid-3">
         <!-- Kids Qaida Course -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=600" alt="Kids Arabic Qaida Study">
+            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=600" alt="Kids Qaida Study">
             <div class="feature-card-body">
                 <h3>Noorani Qaida For Kids</h3>
-                <p>Interactive step-by-step foundation course teaching young children Arabic alphabet recognition, Makharij (pronunciation points), and basic reading rules with utmost patience.</p>
+                <p>Interactive step-by-step foundation course teaching young children Arabic alphabet recognition, Makharij (pronunciation points), and basic reading rules with patience.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Child</a>
             </div>
         </div>
 
         <!-- Adult Quran Recitation with Certified Qari/Ustad Image -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Qari Ustad Teaching Tajweed">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Certified Qari Ustad">
             <div class="feature-card-body">
                 <h3>Adult Quran & Tajweed Course</h3>
-                <p>Learn from certified Qari/Ustad scholars to rectify pronunciation errors, practice continuous recitation fluency, and master full Tajweed rules.</p>
+                <p>Learn from certified Qari & Ustad scholars to rectify pronunciation errors, practice continuous recitation fluency, and master full Tajweed rules.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Adult</a>
             </div>
         </div>
 
         <!-- Hifz Program -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=600" alt="Quran Memorization Hifz">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=600" alt="Quran Memorization">
             <div class="feature-card-body">
                 <h3>Full Hifz-ul-Quran Program</h3>
                 <p>Comprehensive 1-on-1 memorization program with structured daily lesson submissions, Sabqi (recent revision), and Manzil (long-term revision) supervised by certified Huffaz.</p>
@@ -454,7 +460,7 @@
 
         <!-- Namaz & Prayer Course -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=600" alt="Prayer Mosque Atmosphere">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=600" alt="Prayer Mosque">
             <div class="feature-card-body">
                 <h3>Namaz & Daily Prayers Course</h3>
                 <p>Step-by-step guidance on how to perform Salah (Namaz) correctly according to Sunnah, including Wudu (Ablution) rules, prayer positions, and essential recitations.</p>
@@ -464,7 +470,7 @@
 
         <!-- Islamic Studies & Duas -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=600" alt="Islamic Architecture and Art">
+            <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=600" alt="Islamic Architecture">
             <div class="feature-card-body">
                 <h3>Islamic Duas & Sunnah Etiquettes</h3>
                 <p>Learn everyday Masnoon Duas, Islamic manners, Prophet stories (Seerah), basic Fiqh, and essential Kalimas for kids and beginners.</p>
@@ -519,7 +525,7 @@
     </div>
 </section>
 
-<!-- REGISTRATION & SIGN UP SECTION -->
+<!-- REGISTRATION SECTION -->
 <section id="register" class="container">
     <div class="section-header">
         <h2>Student Registration & Free Trial Sign Up</h2>
@@ -594,7 +600,6 @@
                     </tr>
                 </thead>
                 <tbody id="adminTableBody">
-                    <!-- Dynamically populated -->
                 </tbody>
             </table>
         </div>
@@ -614,7 +619,6 @@
         }
     }
 
-    // Handle Student Registration
     function handleRegistration(e) {
         e.preventDefault();
         let name = document.getElementById('regName').value;
@@ -643,13 +647,11 @@
         document.getElementById(id).style.display = 'none';
     }
 
-    // SECURE LOGIN SYSTEM FOR ADMIN
     function handleLogin(e) {
         e.preventDefault();
         let email = document.getElementById('loginEmail').value.trim();
         let pass = document.getElementById('loginPass').value.trim();
 
-        // Check Secret Admin Credentials
         if (email === 'syedshaha289@gmail.com' && pass === 'syedshah0786') {
             closeModal('loginModal');
             document.getElementById('loginEmail').value = '';
@@ -660,7 +662,6 @@
         }
     }
 
-    // Load Admin Data
     function showAdminDashboard() {
         let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
         let tbody = document.getElementById('adminTableBody');
