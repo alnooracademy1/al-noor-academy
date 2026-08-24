@@ -184,29 +184,33 @@
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 35px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             display: flex;
             gap: 35px;
             align-items: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: 0.3s;
         }
-        .teacher-card:hover { border-color: var(--gold-main); transform: translateY(-5px); }
+        .teacher-card:hover { border-color: var(--gold-main); transform: translateY(-4px); }
+        .teacher-img-frame {
+            position: relative;
+            flex-shrink: 0;
+        }
         .teacher-img {
-            width: 180px;
-            height: 180px;
+            width: 190px;
+            height: 190px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--gold-main);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            flex-shrink: 0;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+            display: block;
         }
-        .teacher-info h3 { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 24px; margin-bottom: 6px; }
+        .teacher-info h3 { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 26px; margin-bottom: 6px; }
         .teacher-info .title { color: var(--gold-main); font-weight: 600; font-size: 14px; margin-bottom: 14px; display: inline-block; }
-        .teacher-info p { color: var(--text-muted); font-size: 14px; line-height: 1.8; margin-bottom: 16px; }
+        .teacher-info p { color: var(--text-muted); font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
 
-        .badge-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
-        .badge { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-main); color: var(--gold-light); padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+        .badge-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .badge { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-main); color: var(--gold-light); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
 
         /* REVIEWS */
         .review-card {
@@ -283,7 +287,7 @@
             nav ul.active { display: flex; }
             .hero h1 { font-size: 32px; }
             .teacher-card { flex-direction: column; text-align: center; }
-            .teacher-img { width: 140px; height: 140px; }
+            .teacher-img { width: 150px; height: 150px; }
             .badge-list { justify-content: center; }
             .top-bar { flex-direction: column; gap: 8px; text-align: center; }
         }
@@ -329,7 +333,7 @@
     </div>
 </section>
 
-<!-- CHILD ONLINE CLASS ON LAPTOP WITH BENEFITS -->
+<!-- CHILD ONLINE CLASS SECTION -->
 <section id="child-class" class="container">
     <div class="section-header">
         <h2>Interactive Online Learning For Children</h2>
@@ -339,7 +343,7 @@
 
     <div class="grid-2">
         <div>
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="Child Learning Quran Online on Laptop" style="width:100%; height:370px; object-fit:cover; border-radius:14px; border:1px solid var(--border-color); box-shadow: 0 12px 35px rgba(0,0,0,0.6);">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="Child Learning Quran Online" style="width:100%; height:370px; object-fit:cover; border-radius:14px; border:1px solid var(--border-color); box-shadow: 0 12px 35px rgba(0,0,0,0.6);">
         </div>
         <div style="line-height:1.8; color:var(--text-muted);">
             <h3 style="color:var(--gold-light); font-size:23px; font-family:'Cinzel', serif; margin-bottom:14px;">Spiritual & Academic Benefits of Online Quran Classes</h3>
@@ -352,25 +356,27 @@
     </div>
 </section>
 
-<!-- OUR QUALIFIED TEACHERS SECTION -->
-<section id="teachers" class="container" style="background: rgba(15, 23, 36, 0.3); border-radius: 16px; border: 1px solid var(--border-color);">
+<!-- FULL DETAILED TEACHERS SECTION -->
+<section id="teachers" class="container">
     <div class="section-header">
         <h2>Our Certified Quran Scholars</h2>
-        <p>Learn Tajweed, Makharij, & Hifz with highly experienced and dedicated tutors</p>
+        <p>Learn Tajweed, Makharij, & Hifz with highly qualified, experienced, and dedicated tutors</p>
         <div class="gold-divider"></div>
     </div>
 
     <!-- TEACHER 1 -->
     <div class="teacher-card">
-        <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Qari Syed Muhammad Ali" class="teacher-img">
+        <div class="teacher-img-frame">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=400" alt="Qari Syed Muhammad Ali" class="teacher-img">
+        </div>
         <div class="teacher-info">
             <h3>Qari Syed Muhammad Ali</h3>
             <span class="title">Senior Tajweed & Hifz Specialist</span>
             <p>Qari Syed Muhammad Ali has over 8 years of dedicated experience in online Quranic teaching for international students across the UK, USA, and Canada. He specializes in teaching Noorani Qaida to young children, correcting Arabic pronunciation (Makharij), and guiding Huffaz students in revision.</p>
             <div class="badge-list">
-                <span class="badge">Shahadat-ul-Aalamiyyah</span>
-                <span class="badge">8+ Years Experience</span>
-                <span class="badge">Hifz & Tajweed Specialist</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Shahadat-ul-Aalamiyyah</span>
+                <span class="badge"><i class="fas fa-clock"></i> 8+ Years Experience</span>
+                <span class="badge"><i class="fas fa-star"></i> Hifz & Tajweed Specialist</span>
             </div>
             <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED MUHAMMAD ALI</a>
         </div>
@@ -378,22 +384,24 @@
 
     <!-- TEACHER 2 -->
     <div class="teacher-card">
-        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=400" alt="Qari Syed Shair" class="teacher-img">
+        <div class="teacher-img-frame">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=400" alt="Qari Syed Shair" class="teacher-img">
+        </div>
         <div class="teacher-info">
             <h3>Qari Syed Shair</h3>
             <span class="title">Qirat & Islamic Studies Tutor</span>
             <p>Qari Syed Shair is well-known for his gentle and interactive teaching approach, making him ideal for young beginners and kids. He focuses on daily Masnoon Duas, step-by-step Namaz guidance, basic Arabic phonetics, and fluent Quran recitation with accurate rules.</p>
             <div class="badge-list">
-                <span class="badge">Certified Qari</span>
-                <span class="badge">Child Pedagogy Expert</span>
-                <span class="badge">Islamic Studies Instructor</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Certified Qari</span>
+                <span class="badge"><i class="fas fa-child"></i> Child Pedagogy Expert</span>
+                <span class="badge"><i class="fas fa-book-quran"></i> Islamic Studies Instructor</span>
             </div>
             <a href="#register" class="btn-gold">BOOK CLASS WITH QARI SYED SHAIR</a>
         </div>
     </div>
 </section>
 
-<!-- PARENT & STUDENT REVIEWS -->
+<!-- REVIEWS SECTION -->
 <section id="reviews" class="container">
     <div class="section-header">
         <h2>Parent & Student Reviews</h2>
@@ -446,7 +454,7 @@
     </div>
 </section>
 
-<!-- NO OTP - GOOGLE SIGN UP & DIRECT REGISTRATION -->
+<!-- REGISTRATION FORM SECTION -->
 <section id="register" class="container">
     <div class="section-header">
         <h2>Instant Student Registration</h2>
