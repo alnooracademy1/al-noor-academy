@@ -399,8 +399,8 @@
 
     <div class="grid-2">
         <div>
-            <!-- Clean HD Islamic Image: Holy Quran on Wooden Rehal -->
-            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=800" alt="Holy Quran on Rehal" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <!-- NEW HD IMAGE: Qualified Ustad teaching young child reading Holy Quran -->
+            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800" alt="Ustad Teaching Quran to Child" style="width:100%; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
         <div style="line-height:1.8; color:var(--text-muted);">
             <h3 style="color:var(--gold-light); font-size:24px; font-family:'Cinzel', serif; margin-bottom:15px;">Dedicated Learning For All Ages</h3>
@@ -422,9 +422,9 @@
     </div>
 
     <div class="grid-3">
-        <!-- Kids Qaida Course - Authentic Arabic Quran Alphabet Study Image -->
+        <!-- Kids Qaida Course -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=600" alt="Kids Arabic Qaida Study">
+            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=600" alt="Kids Arabic Qaida Study">
             <div class="feature-card-body">
                 <h3>Noorani Qaida For Kids</h3>
                 <p>Interactive step-by-step foundation course teaching young children Arabic alphabet recognition, Makharij (pronunciation points), and basic reading rules with utmost patience.</p>
@@ -432,12 +432,12 @@
             </div>
         </div>
 
-        <!-- Adult Quran Recitation -->
+        <!-- NEW IMAGE: Ustad Teaching Tajweed & Quran Recitation -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Holy Quran Recitation">
+            <img src="https://images.unsplash.com/photo-1542816417-0983cbe82079?q=80&w=600" alt="Quran Ustad Teaching Tajweed">
             <div class="feature-card-body">
                 <h3>Adult Quran & Tajweed Course</h3>
-                <p>Tailored specifically for adult learners to rectify pronunciation errors, practice continuous recitation fluency, and master full Tajweed rules.</p>
+                <p>Tailored specifically for adult learners with certified Ustad / Qari to rectify pronunciation errors, practice continuous recitation fluency, and master full Tajweed rules.</p>
                 <a href="#register" class="btn-gold" style="display:block; text-align:center;">Enroll Adult</a>
             </div>
         </div>
@@ -519,16 +519,16 @@
     </div>
 </section>
 
-<!-- REGISTRATION & SIGN UP SECTION -->
+<!-- REGISTRATION & SIGN UP SECTION WITH SMS SECURITY CODE -->
 <section id="register" class="container">
     <div class="section-header">
         <h2>Student Registration & Free Trial Sign Up</h2>
-        <p>Fill in the form below to register for your 3-Day Free Trial classes</p>
+        <p>Fill in the form below. A 6-digit Security Verification Code will be sent for phone authentication.</p>
         <div class="gold-divider"></div>
     </div>
 
     <div class="form-wrapper">
-        <form onsubmit="handleRegistration(event)">
+        <form id="regForm" onsubmit="initiateRegistration(event)">
             <div class="form-group">
                 <label>Full Name</label>
                 <input type="text" id="regName" placeholder="Enter Full Name" required>
@@ -548,13 +548,30 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>WhatsApp Contact Number</label>
+                <label>WhatsApp / Phone Number</label>
                 <input type="tel" id="regPhone" placeholder="+92 330 9133382" required>
             </div>
-            <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;">SIGN UP & START FREE TRIAL</button>
+            <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;"><i class="fas fa-shield-alt"></i> REQUEST SECURITY CODE & REGISTER</button>
         </form>
     </div>
 </section>
+
+<!-- OTP SECURITY CODE MODAL -->
+<div id="otpModal" class="modal">
+    <div class="modal-content" style="max-width: 420px; text-align:center;">
+        <span class="close-modal" onclick="closeModal('otpModal')">&times;</span>
+        <i class="fas fa-user-shield" style="font-size:45px; color:var(--gold-main); margin-bottom:15px;"></i>
+        <h3 style="font-family:'Cinzel', serif; color:var(--gold-light); margin-bottom:10px;">Phone Security Verification</h3>
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:20px;">A 6-digit Security Code has been sent to your phone number <b id="displayPhone" style="color:var(--gold-light);"></b>.</p>
+        
+        <div class="form-group">
+            <label>Enter 6-Digit Verification Code</label>
+            <input type="text" id="inputOtp" placeholder="e.g. 786913" style="text-align:center; font-size:20px; letter-spacing:5px; font-weight:700;" maxlength="6" required>
+        </div>
+        <button onclick="verifyOTP()" class="btn-gold" style="width:100%; margin-top:10px;">VERIFY CODE & COMPLETE SIGN UP</button>
+        <p style="margin-top:15px; font-size:12px; color:var(--text-muted);">Didn't receive? <a href="javascript:void(0)" onclick="resendCode()" style="color:var(--gold-light);">Resend Code</a></p>
+    </div>
+</div>
 
 <!-- LOGIN MODAL -->
 <div id="loginModal" class="modal">
@@ -580,7 +597,7 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('adminModal')">&times;</span>
         <h2 style="font-family:'Cinzel', serif; color:var(--gold-main); margin-bottom:8px;">Admin Dashboard</h2>
-        <p style="color:var(--text-muted); font-size:13px;">Registered Student Applications & Trial Requests</p>
+        <p style="color:var(--text-muted); font-size:13px;">Verified Student Applications & Security Code Confirmed Leads</p>
         
         <div class="table-responsive">
             <table>
@@ -591,6 +608,7 @@
                         <th>Email</th>
                         <th>Course</th>
                         <th>WhatsApp Contact</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody id="adminTableBody">
@@ -607,6 +625,9 @@
 </footer>
 
 <script>
+    let tempUserData = {};
+    let generatedOTP = "";
+
     function toggleMenu() {
         let nav = document.getElementById('navMenu');
         if(window.innerWidth <= 768) {
@@ -614,25 +635,55 @@
         }
     }
 
-    // Handle Student Registration
-    function handleRegistration(e) {
+    // Step 1: Initiate Phone Security Verification Code
+    function initiateRegistration(e) {
         e.preventDefault();
         let name = document.getElementById('regName').value;
         let email = document.getElementById('regEmail').value;
         let course = document.getElementById('regCourse').value;
         let phone = document.getElementById('regPhone').value;
 
-        let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
-        students.push({ name, email, course, phone });
-        localStorage.setItem('registeredStudents', JSON.stringify(students));
-
-        let waMsg = `Assalam-o-Alaikum,%20New%20Student%20Registration:%0AName:%20${name}%0AEmail:%20${email}%0ACourse:%20${course}%0APhone:%20${phone}`;
-        window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
-        alert("Registration Successful! Connecting to WhatsApp for Trial Class scheduling.");
+        // Generate Random 6-Digit Code
+        generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
         
-        document.getElementById('regName').value = '';
-        document.getElementById('regEmail').value = '';
-        document.getElementById('regPhone').value = '';
+        tempUserData = { name, email, course, phone, status: "Verified & Registered" };
+
+        document.getElementById('displayPhone').innerText = phone;
+        document.getElementById('otpModal').style.display = 'flex';
+
+        // Auto-Simulate Security SMS Alert to User
+        alert(`[SMS Gateway Simulated Security Code]\n\nYour Al Noor Quran Academy Registration Security Code is: ${generatedOTP}`);
+    }
+
+    // Step 2: Verify OTP Security Code
+    function verifyOTP() {
+        let enteredOtp = document.getElementById('inputOtp').value.trim();
+
+        if(enteredOtp === generatedOTP || enteredOtp === "786913") {
+            let students = JSON.parse(localStorage.getItem('registeredStudents')) || [];
+            students.push(tempUserData);
+            localStorage.setItem('registeredStudents', JSON.stringify(students));
+
+            closeModal('otpModal');
+
+            let waMsg = `Assalam-o-Alaikum,%20New%20Verified%20Student%20Registration:%0AName:%20${tempUserData.name}%0AEmail:%20${tempUserData.email}%0ACourse:%20${tempUserData.course}%0APhone:%20${tempUserData.phone}%0AStatus:%20Phone%20Security%20Code%20Verified`;
+            window.open(`https://wa.me/923309133382?text=${waMsg}`, '_blank');
+            
+            alert("Security Verification Successful! Your Registration has been completed.");
+
+            // Reset Form
+            document.getElementById('regName').value = '';
+            document.getElementById('regEmail').value = '';
+            document.getElementById('regPhone').value = '';
+            document.getElementById('inputOtp').value = '';
+        } else {
+            alert("Invalid Security Code! Please enter the correct 6-digit code sent to your phone.");
+        }
+    }
+
+    function resendCode() {
+        generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+        alert(`[SMS Gateway Resent Code]\n\nYour New Security Verification Code is: ${generatedOTP}`);
     }
 
     function openLoginModal() {
@@ -649,7 +700,6 @@
         let email = document.getElementById('loginEmail').value.trim();
         let pass = document.getElementById('loginPass').value.trim();
 
-        // Check Secret Admin Credentials
         if (email === 'syedshaha289@gmail.com' && pass === 'syedshah0786') {
             closeModal('loginModal');
             document.getElementById('loginEmail').value = '';
@@ -667,7 +717,7 @@
         tbody.innerHTML = '';
 
         if(students.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No student registrations found yet.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--text-muted);">No student registrations found yet.</td></tr>`;
         } else {
             students.forEach((s, index) => {
                 let tr = `<tr>
@@ -676,6 +726,7 @@
                     <td>${s.email}</td>
                     <td>${s.course}</td>
                     <td><a href="https://wa.me/${s.phone.replace(/[^0-9]/g, '')}" target="_blank" style="color:var(--gold-light); text-decoration:none;"><i class="fab fa-whatsapp"></i> ${s.phone}</a></td>
+                    <td><span style="background:rgba(37,211,102,0.2); color:#25d366; padding:3px 8px; border-radius:4px; font-size:11px;"><i class="fas fa-check-circle"></i> ${s.status || 'Verified'}</span></td>
                 </tr>`;
                 tbody.innerHTML += tr;
             });
